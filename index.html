@@ -1,980 +1,1244 @@
 <html lang="en">
 <head>
+<!--
+  ============================================================
+  GROWFY AGENCY — Static Site (Netlify Ready)
+  ------------------------------------------------------------
+  ✅ 100% static: single index.html, no build step, no server.
+  ✅ Deploy: rename this file to "index.html", then drag & drop
+     the folder into https://app.netlify.com/drop  — or connect
+     your Git repo with build command (empty) + publish dir "/".
+  ✅ All assets (Tailwind, Font Awesome, Google Fonts, images)
+     are loaded from CDN, so nothing else needs to be uploaded.
+  ============================================================
+-->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Growfy — Digital Marketing Agency | Empowering Brands In The Digital Age</title>
+<title>Growfy Agency — Empowering Brands In The Digital Age</title>
+<meta name="description" content="Growfy Agency — data-driven digital marketing, YouTube promotion, Spotify growth, social media management and premium website design. Trusted by 10,000+ clients.">
+<meta name="theme-color" content="#060B14">
+<meta name="author" content="Growfy Agency">
+
+<!-- Open Graph / Social -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Growfy Agency — Empowering Brands In The Digital Age">
+<meta property="og:description" content="Social growth, YouTube promotion, Spotify streams and premium web design. Free $299 growth audit.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1200&auto=format&fit=crop">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Favicon (inline, no extra file needed) -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%232EA3FF'/><text x='50' y='72' font-size='62' text-anchor='middle'>🚀</text></svg>">
+
+<!-- CDN Libraries -->
+<script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          jakarta: ['"Plus Jakarta Sans"', 'sans-serif'],
+          grotesk: ['"Space Grotesk"', 'sans-serif']
+        },
+        colors: {
+          growfy: '#2EA3FF',
+          deep: '#060B14',
+          card: '#0B1322',
+          line: 'rgba(255,255,255,0.09)'
+        }
+      }
+    }
+  }
+</script>
+
 <style>
-:root{
-  --bg:#050607;
-  --bg2:#0a0d11;
-  --card:#0d1013;
-  --card2:#12161b;
-  --line:rgba(255,255,255,.08);
-  --line2:rgba(255,255,255,.14);
-  --blue:#2e9bff;
-  --blue2:#7cc5ff;
-  --blue-dim:rgba(46,157,255,.14);
-  --text:#e8edf2;
-  --muted:#98a2ad;
-  --muted2:#6d7883;
-  --radius:14px;
-  --head-h:64px;
-  --shadow:0 18px 40px rgba(0,0,0,.5);
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  font-family:'Inter',system-ui,-apple-system,Segoe UI,sans-serif;
-  background:var(--bg);color:var(--text);
-  font-size:14px;line-height:1.6;
-  overflow-x:hidden;
-  -webkit-font-smoothing:antialiased;
-}
-::selection{background:rgba(46,157,255,.35);color:#fff}
-::-webkit-scrollbar{width:10px}
-::-webkit-scrollbar-track{background:#08090b}
-::-webkit-scrollbar-thumb{background:#232a31;border-radius:8px}
-::-webkit-scrollbar-thumb:hover{background:#2e9bff}
-img,svg{display:block;max-width:100%}
-a{text-decoration:none;color:inherit}
-button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
-ul{list-style:none}
-.container{width:min(1180px,92%);margin:0 auto}
-section{scroll-margin-top:calc(var(--head-h) + 16px)}
-.accent{color:var(--blue)}
-.eyebrow{display:inline-block;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
-h1,h2,h3,h4{line-height:1.2;font-weight:800}
-.muted{color:var(--muted)}
+  *{scroll-behavior:smooth}
+  html,body{max-width:100%;overflow-x:hidden}
+  body{background:#060B14;color:#E8EEF6;font-family:"Plus Jakarta Sans",sans-serif}
+  section[id]{scroll-margin-top:80px}
+  ::-webkit-scrollbar{width:9px}
+  ::-webkit-scrollbar-track{background:#060B14}
+  ::-webkit-scrollbar-thumb{background:linear-gradient(#2EA3FF,#0a4eff);border-radius:99px}
+  .hide-scroll{scrollbar-width:none}
+  .hide-scroll::-webkit-scrollbar{display:none}
 
-/* ============ BUTTONS ============ */
-.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 22px;border-radius:8px;font-size:12.5px;font-weight:700;letter-spacing:.3px;transition:all .25s ease;min-height:42px;border:1px solid transparent}
-.btn-primary{background:var(--blue);color:#fff;box-shadow:0 8px 22px rgba(46,157,255,.28)}
-.btn-primary:hover{background:#4fabff;transform:translateY(-2px);box-shadow:0 12px 28px rgba(46,157,255,.4)}
-.btn-primary:active{transform:translateY(0)}
-.btn-ghost{border-color:var(--line2);background:rgba(255,255,255,.04);color:var(--text)}
-.btn-ghost:hover{border-color:var(--blue);color:var(--blue2);background:rgba(46,157,255,.08);transform:translateY(-2px)}
-.btn-sm{padding:9px 16px;font-size:11.5px;min-height:36px}
+  .glass{background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+  .grad-text{background:linear-gradient(90deg,#38B6FF,#2E7FFF);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .btn-primary{background:linear-gradient(135deg,#38B6FF 0%,#1E7CFF 100%);box-shadow:0 8px 32px rgba(46,163,255,.35),inset 0 1px 0 rgba(255,255,255,.4);transition:.3s;color:#fff}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 44px rgba(46,163,255,.5)}
+  .btn-ghost{border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);transition:.3s;color:#E8EEF6}
+  .btn-ghost:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.4)}
+  .eyebrow{letter-spacing:.35em;font-size:10px;font-weight:800;color:#2EA3FF;text-transform:uppercase}
+  .hero-overlay{background:linear-gradient(90deg,rgba(4,8,16,.94) 15%,rgba(4,8,16,.78) 45%,rgba(4,8,16,.55) 100%),linear-gradient(0deg,rgba(6,11,20,1) 0%,transparent 30%,transparent 70%,rgba(6,11,20,.7) 100%)}
+  .card-hover{transition:.35s cubic-bezier(.2,.8,.2,1)}
+  .card-hover:hover{transform:translateY(-6px);border-color:rgba(46,163,255,.5)!important;box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 0 1px rgba(46,163,255,.2),0 10px 40px rgba(46,163,255,.15)}
+  .reveal{opacity:0;transform:translateY(36px);transition:.8s cubic-bezier(.2,.8,.2,1)}
+  .reveal.visible{opacity:1;transform:none}
 
-/* ============ HEADER ============ */
-header{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--head-h);background:rgba(5,6,8,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:all .3s ease}
-header.scrolled{background:rgba(6,8,10,.95);border-bottom-color:var(--line);box-shadow:0 10px 30px rgba(0,0,0,.45)}
-.head-in{height:var(--head-h);display:flex;align-items:center;gap:18px}
-.logo{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#0b0d10;border-radius:8px;padding:7px 13px;font-weight:800;font-size:14px;letter-spacing:.2px;flex-shrink:0}
-.logo i{color:var(--blue);font-size:14px}
-nav.main{margin-left:auto}
-nav.main > ul{display:flex;align-items:center;gap:2px}
-nav.main a.nl{display:inline-flex;align-items:center;gap:6px;padding:8px 10px;border-radius:999px;font-size:11.5px;font-weight:600;color:#b7c1cb;transition:all .2s ease;white-space:nowrap}
-nav.main a.nl:hover{color:#fff;background:rgba(255,255,255,.06)}
-nav.main a.nl.active{background:var(--blue);color:#fff;box-shadow:0 4px 14px rgba(46,157,255,.35)}
-.has-drop{position:relative}
-.has-drop .caret{font-size:9px;transition:transform .25s}
-.has-drop.open .caret{transform:rotate(180deg)}
-.drop{position:absolute;top:calc(100% + 10px);left:0;min-width:210px;background:#0d1116;border:1px solid var(--line);border-radius:12px;padding:8px;box-shadow:var(--shadow);opacity:0;transform:translateY(10px);pointer-events:none;transition:all .25s ease}
-.has-drop.open .drop{opacity:1;transform:translateY(0);pointer-events:auto}
-.drop a{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:12px;color:var(--muted);transition:all .18s}
-.drop a i{color:var(--blue);width:16px;text-align:center;font-size:13px}
-.drop a:hover{background:var(--blue-dim);color:#fff;transform:translateX(3px)}
-.nav-toggle{display:none;margin-left:auto;width:42px;height:42px;border-radius:10px;border:1px solid var(--line);color:var(--text);font-size:16px;transition:all .2s}
-.nav-toggle:hover{border-color:var(--blue);color:var(--blue)}
+  .nav-link{position:relative;transition:.25s;font-size:12.5px;font-weight:600;color:#CBD5E1;white-space:nowrap}
+  .nav-link:hover,.nav-link.active{color:#fff}
+  .nav-link.active:after{content:'';position:absolute;left:0;right:0;bottom:-6px;height:2px;background:#2EA3FF;border-radius:99px;box-shadow:0 0 12px #2EA3FF}
+  .tick{width:22px;height:22px;border-radius:50%;background:rgba(46,163,255,.15);display:grid;place-items:center;color:#2EA3FF;font-size:11px;flex-shrink:0}
 
-/* ============ HERO ============ */
-.hero{position:relative;padding:calc(var(--head-h) + 78px) 0 96px;overflow:hidden;
-  background:
-   radial-gradient(900px 480px at 88% 6%,rgba(46,157,255,.16),transparent 62%),
-   radial-gradient(700px 420px at 6% 96%,rgba(46,157,255,.09),transparent 60%),
-   linear-gradient(180deg,#0b0f14 0%,#050607 100%);}
-.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:46px 46px;-webkit-mask-image:radial-gradient(70% 60% at 60% 30%,#000 0%,transparent 75%);mask-image:radial-gradient(70% 60% at 60% 30%,#000 0%,transparent 75%);pointer-events:none}
-.hero-deco{position:absolute;right:-40px;top:40px;opacity:.14;pointer-events:none}
-.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
-.badge-wrap{position:relative;display:inline-block;margin-bottom:20px}
-.badge{display:inline-flex;align-items:center;gap:9px;padding:7px 14px;border-radius:999px;border:1px solid rgba(46,157,255,.55);background:rgba(46,157,255,.12);color:var(--blue2);font-size:9.5px;font-weight:800;letter-spacing:2.4px;text-transform:uppercase;transition:all .2s}
-.badge:hover{background:rgba(46,157,255,.2)}
-.badge .caret{font-size:8px;transition:transform .25s}
-.badge-wrap.open .badge .caret{transform:rotate(180deg)}
-.badge-menu{position:absolute;top:calc(100% + 8px);left:0;min-width:200px;background:#0d1116;border:1px solid var(--line);border-radius:12px;padding:6px;box-shadow:var(--shadow);opacity:0;transform:translateY(8px);pointer-events:none;transition:all .22s;z-index:5}
-.badge-wrap.open .badge-menu{opacity:1;transform:translateY(0);pointer-events:auto}
-.badge-menu button{display:block;width:100%;text-align:left;padding:8px 12px;border-radius:8px;font-size:10px;font-weight:700;letter-spacing:1.6px;color:var(--muted);transition:all .15s}
-.badge-menu button:hover{background:var(--blue-dim);color:var(--blue2)}
-.hero h1{font-size:clamp(2.3rem,5.2vw,3.55rem);letter-spacing:-1px;margin-bottom:20px}
-.hero p.lead{max-width:440px;color:var(--muted);font-size:13.5px;margin-bottom:30px}
-.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
-/* hero visual */
-.hero-visual{position:relative;min-height:400px}
-.glass{background:rgba(13,17,23,.82);border:1px solid var(--line);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:16px;box-shadow:var(--shadow)}
-.hv-main{position:absolute;right:0;top:70px;width:min(400px,92%);padding:24px;animation:float 6s ease-in-out infinite}
-.hv-head{display:flex;align-items:center;gap:12px;margin-bottom:18px}
-.hv-ico{width:42px;height:42px;border-radius:11px;background:var(--blue-dim);color:var(--blue);display:grid;place-items:center;font-size:17px}
-.hv-head h4{font-size:16px;font-weight:800}
-.hv-head span{display:block;font-size:10px;color:var(--muted2);letter-spacing:1.4px;text-transform:uppercase}
-.hv-label{display:flex;justify-content:space-between;font-size:10.5px;color:var(--muted);margin-bottom:8px;font-weight:600}
-.bar{height:6px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden;margin-bottom:12px}
-.bar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--blue),var(--blue2));transition:width 1.4s cubic-bezier(.22,.9,.35,1) .4s}
-.hero.loaded .bar i.b1{width:92%}
-.hero.loaded .bar i.b2{width:74%}
-.hv-chip{position:absolute;display:flex;align-items:center;gap:11px;padding:12px 16px;animation:float 7s ease-in-out infinite}
-.hv-chip .ci{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;font-size:14px}
-.hv-chip b{font-size:14px;font-weight:800;display:block;line-height:1.1}
-.hv-chip span{font-size:9.5px;color:var(--muted);letter-spacing:.6px}
-.hv-c1{top:6px;right:26px;animation-delay:.8s}
-.hv-c1 .ci{background:var(--blue-dim);color:var(--blue)}
-.hv-c2{bottom:26px;left:0;animation-delay:1.6s}
-.hv-c2 .ci{background:rgba(46,255,157,.12);color:#3ddc84}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+  .faq-body{max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.2,.8,.2,1)}
+  .faq-item.open .faq-body{max-height:320px}
+  .faq-item{transition:.3s}
+  .faq-item.open{border-color:rgba(46,163,255,.6)!important;background:rgba(46,163,255,.06)!important;box-shadow:0 0 0 1px rgba(46,163,255,.25),0 15px 40px rgba(46,163,255,.1)}
+  .faq-arrow{transition:.4s}
+  .faq-item.open .faq-arrow{transform:rotate(180deg);background:#2EA3FF;color:#fff;border-color:#2EA3FF}
 
-/* ============ STATS ============ */
-.stats{padding:74px 0 30px}
-.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 20px;text-align:center;transition:all .3s ease}
-.stat:hover{transform:translateY(-6px);border-color:rgba(46,157,255,.45);box-shadow:0 16px 34px rgba(0,0,0,.45)}
-.stat i{font-size:22px;color:var(--blue);margin-bottom:14px}
-.stat .num{font-size:30px;font-weight:800;letter-spacing:-.5px}
-.stat .lbl{font-size:11.5px;color:var(--muted);margin-top:6px;line-height:1.45}
+  .marquee{animation:floaty 6s ease-in-out infinite}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+  @keyframes pulseGlow{0%,100%{box-shadow:0 0 0 0 rgba(46,163,255,.5)}50%{box-shadow:0 0 0 14px rgba(46,163,255,0)}}
+  .pulse-dot{animation:pulseGlow 2s infinite}
+  .bar-anim{width:0;transition:width 1.6s cubic-bezier(.2,.8,.2,1)}
 
-/* ============ ABOUT / WELCOME ============ */
-.about{padding:56px 0 92px}
-.about-card{background:#0b0e11;border:1px solid var(--line);border-radius:20px;padding:44px;display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
-.media{position:relative}
-.media-frame{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#161b21}
-.media-frame svg{width:100%;height:auto}
-.soc-float{position:absolute;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-size:15px;background:#14181d;border:1px solid var(--line);box-shadow:0 10px 22px rgba(0,0,0,.5);transition:all .25s;z-index:3}
-.soc-float:hover{transform:scale(1.12)}
-.sf-yt{left:-16px;top:16%;color:#ff4d4d}
-.sf-fb{left:-16px;top:58%;color:#4d8dff}
-.sf-tt{bottom:-16px;left:44%;color:#fff}
-.sf-bolt{top:-16px;right:-14px;background:var(--blue);color:#fff;border-color:transparent;box-shadow:0 10px 26px rgba(46,157,255,.5)}
-.about-card h2{font-size:clamp(1.6rem,3vw,2.15rem);margin-bottom:16px;letter-spacing:-.5px}
-.about-card p{color:var(--muted);font-size:13px;margin-bottom:26px}
-.about-cta{display:flex;gap:12px;flex-wrap:wrap}
+  .chat-msg{animation:pop .35s cubic-bezier(.2,.8,.2,1)}
+  @keyframes pop{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}
 
-/* ============ SERVICES ============ */
-.services{position:relative;padding:96px 0;overflow:hidden;
-  background:
-   radial-gradient(760px 400px at 15% 0%,rgba(46,157,255,.1),transparent 60%),
-   radial-gradient(760px 400px at 90% 100%,rgba(46,157,255,.08),transparent 60%),
-   linear-gradient(180deg,#0a0d11,#07090b);}
-.services::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(115deg,rgba(255,255,255,.028) 0 2px,transparent 2px 14px);pointer-events:none}
-.sec-head{text-align:center;position:relative;margin-bottom:44px}
-.sec-head h2{font-size:clamp(1.7rem,3.4vw,2.3rem);letter-spacing:-.6px}
-.sec-head .sub{font-size:12px;color:var(--muted);max-width:520px;margin:12px auto 0}
-.svc-grid{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.svc{background:rgba(13,16,20,.78);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:var(--radius);padding:32px 24px;text-align:center;transition:all .3s ease}
-.svc:hover{transform:translateY(-7px);border-color:rgba(46,157,255,.5);box-shadow:0 20px 40px rgba(0,0,0,.5)}
-.svc .ico{width:56px;height:56px;margin:0 auto 16px;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid var(--line);display:grid;place-items:center;font-size:23px;color:#fff;transition:all .3s}
-.svc:hover .ico{background:var(--blue-dim);color:var(--blue);border-color:rgba(46,157,255,.4);transform:scale(1.06)}
-.svc h3{font-size:14.5px;font-weight:700;margin-bottom:9px}
-.svc p{font-size:11.5px;color:var(--muted)}
-.flash{animation:flashPulse 1.6s ease}
-@keyframes flashPulse{0%,100%{box-shadow:0 0 0 0 rgba(46,157,255,0)}25%{box-shadow:0 0 0 6px rgba(46,157,255,.45);border-color:var(--blue)}60%{box-shadow:0 0 0 3px rgba(46,157,255,.25)}}
+  .modal-bg{background:rgba(2,5,12,.8);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+  input:focus,textarea:focus,select:focus{outline:none;border-color:#2EA3FF!important;box-shadow:0 0 0 3px rgba(46,163,255,.2)}
 
-/* ============ GROWTH ============ */
-.growth{padding:96px 0}
-.g-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:18px}
-.g-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;transition:all .3s}
-.g-card:hover{transform:translateY(-6px);border-color:rgba(46,157,255,.45)}
-.g-card i{font-size:19px;color:var(--blue);margin-bottom:16px}
-.g-card h3{font-size:14px;font-weight:700;margin-bottom:10px}
-.g-card p{font-size:11.5px;color:var(--muted)}
-.g-wide{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.gw{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--blue);border-radius:12px;padding:26px 26px;transition:all .3s}
-.gw:hover{transform:translateY(-5px);background:var(--card2)}
-.gw h3{font-size:15px;font-weight:800;margin-bottom:10px}
-.gw p{font-size:11.5px;color:var(--muted)}
+  .portfolio-card img{transition:.6s}
+  .portfolio-card:hover img{transform:scale(1.08)}
+  .testi-track{transition:transform .6s cubic-bezier(.2,.8,.2,1)}
 
-/* ============ WHY ============ */
-.why{position:relative;padding:104px 0;overflow:hidden;
-  background:
-   radial-gradient(820px 460px at 80% 20%,rgba(46,157,255,.12),transparent 62%),
-   linear-gradient(180deg,#080a0d,#050607);}
-.why::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:26px 26px;-webkit-mask-image:radial-gradient(60% 60% at 70% 40%,#000,transparent 80%);mask-image:radial-gradient(60% 60% at 70% 40%,#000,transparent 80%);pointer-events:none}
-.why-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-.why h2{font-size:clamp(1.8rem,3.6vw,2.4rem);letter-spacing:-.6px;margin-bottom:20px}
-.why p{color:var(--muted);font-size:12.5px;margin-bottom:16px}
-.why .btn{margin-top:12px}
-.why-list{display:flex;flex-direction:column;gap:14px}
-.w-card{display:flex;gap:16px;align-items:flex-start;background:rgba(10,13,17,.78);border:1px solid var(--line);border-radius:12px;padding:20px;transition:all .3s;backdrop-filter:blur(6px)}
-.w-card:hover{transform:translateX(6px);border-color:rgba(46,157,255,.45)}
-.w-ico{flex-shrink:0;width:42px;height:42px;border-radius:10px;background:var(--blue-dim);color:var(--blue);display:grid;place-items:center;font-size:15px}
-.w-card h3{font-size:13.5px;font-weight:700;margin-bottom:6px}
-.w-card p{font-size:11px;color:var(--muted);margin:0}
+  .timeline-dot:before{content:'';position:absolute;left:11px;top:28px;bottom:-10px;width:2px;background:rgba(46,163,255,.25)}
+  .timeline-dot:last-child:before{display:none}
 
-/* ============ PARTNERS ============ */
-.partners{padding:96px 0}
-.p-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-.p-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 16px 20px;text-align:center;transition:all .3s;display:flex;flex-direction:column;align-items:center}
-.p-card:hover{transform:translateY(-7px);border-color:rgba(46,157,255,.45);box-shadow:0 18px 36px rgba(0,0,0,.45)}
-.avatar{width:64px;height:64px;border-radius:16px;display:grid;place-items:center;font-size:19px;font-weight:800;color:#fff;margin-bottom:14px;border:1px solid rgba(255,255,255,.14);text-shadow:0 2px 8px rgba(0,0,0,.35)}
-.p-card h3{font-size:12.5px;font-weight:700}
-.p-role{font-size:8.5px;font-weight:800;letter-spacing:1.8px;color:var(--blue);text-transform:uppercase;margin:5px 0 10px}
-.p-card p{font-size:10px;color:var(--muted);margin-bottom:14px;flex-grow:1}
-.p-soc{display:flex;gap:7px;justify-content:center}
-.p-soc a{width:27px;height:27px;border-radius:50%;background:#171b20;border:1px solid var(--line);display:grid;place-items:center;font-size:10px;color:#c4ced8;transition:all .2s}
-.p-soc a:hover{background:var(--blue);border-color:var(--blue);color:#fff;transform:translateY(-3px)}
+  #progressBar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#38B6FF,#7C3AED);z-index:100;width:0}
 
-/* ============ FAQ ============ */
-.faq{position:relative;padding:104px 0;overflow:hidden;
-  background:
-   radial-gradient(700px 380px at 20% 10%,rgba(46,157,255,.1),transparent 60%),
-   radial-gradient(700px 380px at 85% 90%,rgba(46,157,255,.08),transparent 60%),
-   linear-gradient(180deg,#090b0e,#060809);}
-.faq::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(65deg,rgba(255,255,255,.025) 0 2px,transparent 2px 16px);pointer-events:none}
-.acc{position:relative;max-width:760px;margin:0 auto}
-.acc-item{background:rgba(10,13,17,.85);border:1px solid var(--line);border-radius:10px;margin-bottom:12px;overflow:hidden;transition:border-color .3s}
-.acc-item.open{border-color:rgba(46,157,255,.6);box-shadow:0 10px 30px rgba(0,0,0,.35)}
-.acc-btn{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 20px;text-align:left;font-size:12.5px;font-weight:600;color:var(--text);transition:color .25s}
-.acc-item.open .acc-btn{color:var(--blue)}
-.acc-btn .chev{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.06);display:grid;place-items:center;font-size:10px;color:var(--muted);transition:all .3s}
-.acc-item.open .chev{background:var(--blue);color:#fff;transform:rotate(180deg)}
-.acc-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
-.acc-body p{padding:0 20px 18px;font-size:11.5px;color:var(--muted)}
-
-/* ============ FOOTER ============ */
-footer{background:#07090b;border-top:1px solid var(--line);padding-top:70px}
-.f-grid{display:grid;grid-template-columns:1.25fr 1fr 1fr 1.3fr;gap:44px;padding-bottom:52px}
-.f-brand p{font-size:11.5px;color:var(--muted);margin:18px 0 20px;max-width:250px}
-.f-soc{display:flex;gap:9px}
-.f-soc a{width:34px;height:34px;border-radius:50%;background:#12161b;border:1px solid var(--line);display:grid;place-items:center;font-size:12px;color:#c4ced8;transition:all .22s}
-.f-soc a:hover{background:var(--blue);border-color:var(--blue);color:#fff;transform:translateY(-3px)}
-.f-col h4{font-size:10.5px;font-weight:800;letter-spacing:2.2px;text-transform:uppercase;margin-bottom:20px;position:relative;padding-bottom:10px}
-.f-col h4::after{content:"";position:absolute;left:0;bottom:0;width:26px;height:2px;background:var(--blue);border-radius:2px}
-.f-col li{margin-bottom:11px}
-.f-col li a,.f-col li button.fl{display:inline-flex;align-items:center;gap:9px;font-size:11.5px;color:var(--muted);transition:all .2s;padding:0}
-.f-col li a i,.f-col li button.fl i{color:var(--blue);font-size:10px;transition:transform .2s}
-.f-col li a:hover,.f-col li button.fl:hover{color:var(--blue2);transform:translateX(4px)}
-.f-col li a:hover i,.f-col li button.fl:hover i{transform:translateX(2px)}
-.f-contact li{display:flex;gap:12px;margin-bottom:16px}
-.f-contact i{color:var(--blue);font-size:13px;margin-top:3px}
-.f-contact b{display:block;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:var(--text)}
-.f-contact span,.f-contact a.mail{display:block;font-size:11px;color:var(--muted)}
-.f-contact a.mail:hover{color:var(--blue2)}
-.f-bottom{border-top:1px solid var(--line);padding:18px 0;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
-.f-bottom p{font-size:10.5px;color:var(--muted2)}
-.pay{display:flex;align-items:center;gap:12px}
-.pay span{font-size:9px;letter-spacing:1.6px;color:var(--muted2);font-weight:700}
-.pay-pill{display:flex;gap:12px;background:#101317;border:1px solid var(--line);border-radius:8px;padding:8px 14px}
-.pay-pill i{font-size:19px;color:#8b96a1;transition:color .2s}
-.pay-pill i:hover{color:#fff}
-
-/* ============ MODALS ============ */
-.modal-backdrop{position:fixed;inset:0;z-index:1000;background:rgba(3,5,8,.75);backdrop-filter:blur(5px);display:none;align-items:center;justify-content:center;padding:20px}
-.modal-backdrop.show{display:flex}
-.modal{width:min(480px,94vw);max-height:88vh;overflow-y:auto;background:#0d1116;border:1px solid var(--line2);border-radius:16px;padding:28px;box-shadow:0 30px 70px rgba(0,0,0,.6);animation:pop .3s ease}
-@keyframes pop{from{opacity:0;transform:scale(.94) translateY(12px)}to{opacity:1;transform:scale(1) translateY(0)}}
-.modal h3{font-size:18px;margin-bottom:6px}
-.modal .msub{font-size:11.5px;color:var(--muted);margin-bottom:22px}
-.m-close{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.06);color:var(--muted);font-size:13px;transition:all .2s}
-.m-close:hover{background:#ff4d4d;color:#fff}
-.modal{position:relative}
-.field{margin-bottom:15px}
-.field label{display:block;font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
-.field input,.field select,.field textarea{width:100%;background:#0a0d10;border:1px solid var(--line);border-radius:8px;padding:11px 13px;color:var(--text);font-size:12.5px;font-family:inherit;transition:all .2s;outline:none}
-.field select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M1 1l4 4 4-4' stroke='%239aa4ae' stroke-width='1.5' fill='none' stroke-linecap='round'/></svg>");background-repeat:no-repeat;background-position:right 13px center}
-.field textarea{resize:vertical;min-height:80px}
-.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(46,157,255,.16)}
-.field.err input,.field.err select{border-color:#ff5c5c;box-shadow:0 0 0 3px rgba(255,92,92,.14)}
-.err-msg{display:none;font-size:10px;color:#ff7b7b;margin-top:5px}
-.field.err .err-msg{display:block}
-.m-success{text-align:center;padding:20px 0}
-.m-success i{font-size:44px;color:#3ddc84;margin-bottom:16px}
-.m-success h4{font-size:17px;margin-bottom:8px}
-.m-success p{font-size:12px;color:var(--muted)}
-/* invoice timeline */
-.inv-result{margin-top:22px;display:none}
-.inv-result.show{display:block;animation:pop .35s ease}
-.inv-head{display:flex;justify-content:space-between;align-items:center;background:#0a0d10;border:1px solid var(--line);border-radius:10px;padding:13px 16px;margin-bottom:18px}
-.inv-head b{font-size:12px}
-.inv-head span{font-size:10px;color:var(--blue);font-weight:700;letter-spacing:1px;text-transform:uppercase;background:var(--blue-dim);padding:4px 10px;border-radius:99px}
-.steps{position:relative;padding-left:6px}
-.steps li{position:relative;padding:0 0 22px 26px;font-size:11.5px;color:var(--muted2)}
-.steps li::before{content:"";position:absolute;left:0;top:4px;width:12px;height:12px;border-radius:50%;background:#1c2229;border:2px solid #2a323b}
-.steps li::after{content:"";position:absolute;left:5.5px;top:18px;bottom:2px;width:1.5px;background:#232a31}
-.steps li:last-child::after{display:none}
-.steps li.done{color:var(--muted)}
-.steps li.done::before{background:var(--blue);border-color:var(--blue)}
-.steps li.done::after{background:var(--blue)}
-.steps li.current{color:#fff;font-weight:700}
-.steps li.current::before{background:var(--blue);border-color:var(--blue);box-shadow:0 0 0 5px rgba(46,157,255,.2)}
-.steps li b{display:block;font-size:12px;color:inherit}
-.steps li small{font-size:10px;color:var(--muted2)}
-
-/* ============ TOAST / MISC ============ */
-.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,80px);z-index:1200;background:#10151b;border:1px solid var(--line2);border-left:3px solid var(--blue);border-radius:10px;padding:12px 20px;font-size:12px;font-weight:600;box-shadow:var(--shadow);opacity:0;transition:all .35s cubic-bezier(.22,.9,.35,1);display:flex;align-items:center;gap:10px;max-width:90vw}
-.toast.show{transform:translate(-50%,0);opacity:1}
-.toast i{color:var(--blue)}
-.to-top{position:fixed;right:22px;bottom:22px;z-index:950;width:42px;height:42px;border-radius:12px;background:var(--blue);color:#fff;font-size:14px;box-shadow:0 10px 26px rgba(46,157,255,.4);opacity:0;pointer-events:none;transform:translateY(14px);transition:all .3s}
-.to-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
-.to-top:hover{background:#4fabff}
-.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
-.reveal.in{opacity:1;transform:translateY(0)}
-
-/* ============ RESPONSIVE ============ */
-@media(max-width:1080px){
-  nav.main{position:fixed;top:var(--head-h);left:0;right:0;background:#0a0c0f;border-bottom:1px solid var(--line);max-height:0;overflow:hidden;transition:max-height .4s ease;margin:0}
-  header.menu-open nav.main{max-height:calc(100vh - var(--head-h));overflow-y:auto}
-  nav.main > ul{flex-direction:column;align-items:stretch;padding:14px 5%;gap:4px}
-  nav.main a.nl{padding:12px 14px;border-radius:10px;font-size:13px;justify-content:flex-start}
-  .has-drop .drop{position:static;opacity:1;transform:none;pointer-events:none;display:none;box-shadow:none;margin:4px 0 8px 12px;background:#0e1216}
-  .has-drop.open .drop{display:block;pointer-events:auto}
-  .nav-toggle{display:grid;place-items:center}
-  .hero-grid{grid-template-columns:1fr;gap:60px}
-  .hero-visual{min-height:360px}
-  .stats-grid{grid-template-columns:repeat(2,1fr)}
-  .about-card{grid-template-columns:1fr;padding:32px;gap:40px}
-  .svc-grid{grid-template-columns:repeat(2,1fr)}
-  .g-grid{grid-template-columns:1fr}
-  .g-wide{grid-template-columns:1fr}
-  .why-grid{grid-template-columns:1fr;gap:40px}
-  .p-grid{grid-template-columns:repeat(3,1fr)}
-  .f-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:640px){
-  .stats-grid{grid-template-columns:1fr 1fr;gap:12px}
-  .stat{padding:22px 12px}
-  .stat .num{font-size:24px}
-  .svc-grid{grid-template-columns:1fr}
-  .p-grid{grid-template-columns:1fr 1fr}
-  .f-grid{grid-template-columns:1fr;gap:34px}
-  .hero{padding-top:calc(var(--head-h) + 50px)}
-  .hv-main{position:relative;top:0;right:0;width:100%;margin-top:50px}
-  .hv-c1{right:0}
-  .hero-visual{min-height:0}
-  .about-card{padding:24px}
-  .f-bottom{justify-content:center;text-align:center}
-}
-@media(max-width:420px){.p-grid{grid-template-columns:1fr}}
+  @media (max-width:1023px){.nav-desktop{display:none}}
+  @media (prefers-reduced-motion:reduce){
+    *{animation-duration:.001ms!important;transition-duration:.001ms!important}
+  }
 </style>
 </head>
-<body>
 
-<!-- ================= HEADER ================= -->
-<header id="header">
-  <div class="container head-in">
-    <a href="#home" class="logo" aria-label="Growfy home"><i class="fa-solid fa-chart-line"></i> Growfy</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
-    <nav class="main" aria-label="Primary">
-      <ul>
-        <li><a class="nl active" href="#home" data-spy="home">Home</a></li>
-        <li><a class="nl" href="#partnerships" data-spy="partnerships">Portfolio</a></li>
-        <li class="has-drop" id="svcDrop">
-          <a class="nl dd-toggle" href="#services" data-spy="services" aria-haspopup="true" aria-expanded="false">Services <i class="fa-solid fa-chevron-down caret"></i></a>
-          <div class="drop" role="menu">
-            <a href="#services" data-flash="#svc-ig"><i class="fa-brands fa-instagram"></i> Instagram Growth</a>
-            <a href="#services" data-flash="#svc-yt"><i class="fa-brands fa-youtube"></i> YouTube Service</a>
-            <a href="#services" data-flash="#svc-fb"><i class="fa-brands fa-facebook-f"></i> Facebook Service</a>
-            <a href="#services" data-flash="#svc-sp"><i class="fa-brands fa-spotify"></i> Spotify Service</a>
-            <a href="#services" data-flash="#svc-tt"><i class="fa-brands fa-tiktok"></i> TikTok Service</a>
-            <a href="#services" data-flash="#svc-am"><i class="fa-brands fa-apple"></i> Apple Music</a>
-          </div>
-        </li>
-        <li><a class="nl" href="#services" data-flash="#svc-yt">YouTube Promotion</a></li>
-        <li><a class="nl" href="#" data-open-modal="start" data-service="Website Design">Website Design</a></li>
-        <li><a class="nl" href="#partnerships">Team Member</a></li>
-        <li><a class="nl" href="#faq" data-spy="faq">Comments</a></li>
-        <li><a class="nl" href="#about" data-spy="about">About Us</a></li>
-        <li><a class="nl" href="#" data-open-modal="invoice">Invoice Tracking</a></li>
-        <li><a class="nl" href="#contact" data-spy="contact">Support</a></li>
-      </ul>
+<body class="antialiased">
+
+<div id="progressBar"></div>
+
+<!-- ================= TOP NAV ================= -->
+<header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-white/5 bg-[#060B14]/85 backdrop-blur-xl">
+  <div class="max-w-[1280px] mx-auto px-4 lg:px-6 flex items-center justify-between h-[62px]">
+    <div class="flex items-center gap-2">
+      <a href="#home" class="flex items-center gap-2 bg-white rounded-[8px] px-3 py-1.5 shadow-[0_0_20px_rgba(46,163,255,.35)]">
+        <span class="w-6 h-6 rounded-md bg-gradient-to-br from-[#38B6FF] to-[#0a4eff] grid place-items-center text-white text-[13px]"><i class="fa-solid fa-rocket"></i></span>
+        <span class="font-grotesk font-bold text-[#0B1322] text-[16px] tracking-tight">Growfy</span>
+      </a>
+    </div>
+
+    <nav class="nav-desktop flex items-center gap-5 xl:gap-6">
+      <a href="#home" class="nav-link active" data-nav="home">Home</a>
+      <a href="#portfolio" class="nav-link" data-nav="portfolio">Portfolio</a>
+
+      <div class="relative group">
+        <button id="servicesBtn" class="nav-link flex items-center gap-1">Services <i class="fa-solid fa-chevron-down text-[9px] opacity-70"></i></button>
+        <div id="servicesDrop" class="absolute top-[28px] left-1/2 -translate-x-1/2 w-[520px] glass rounded-2xl p-4 grid grid-cols-2 gap-2 opacity-0 invisible translate-y-3 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 shadow-2xl" style="background:rgba(11,19,34,.97)">
+          <a href="#services" class="flex gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+            <span class="w-10 h-10 rounded-xl bg-pink-500/15 text-pink-400 grid place-items-center text-lg"><i class="fa-brands fa-instagram"></i></span>
+            <span><span class="block text-[13px] font-bold text-white">Instagram Growth</span><span class="block text-[11px] text-slate-400">Followers &amp; engagement boost</span></span>
+          </a>
+          <a href="#services" class="flex gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+            <span class="w-10 h-10 rounded-xl bg-red-500/15 text-red-400 grid place-items-center text-lg"><i class="fa-brands fa-youtube"></i></span>
+            <span><span class="block text-[13px] font-bold text-white">YouTube Service</span><span class="block text-[11px] text-slate-400">Views, subs &amp; monetization</span></span>
+          </a>
+          <a href="#services" class="flex gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+            <span class="w-10 h-10 rounded-xl bg-blue-500/15 text-blue-400 grid place-items-center text-lg"><i class="fa-brands fa-facebook-f"></i></span>
+            <span><span class="block text-[13px] font-bold text-white">Facebook Ads</span><span class="block text-[11px] text-slate-400">Page growth &amp; campaigns</span></span>
+          </a>
+          <a href="#services" class="flex gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+            <span class="w-10 h-10 rounded-xl bg-green-500/15 text-green-400 grid place-items-center text-lg"><i class="fa-brands fa-spotify"></i></span>
+            <span><span class="block text-[13px] font-bold text-white">Spotify Promo</span><span class="block text-[11px] text-slate-400">Streams &amp; listeners</span></span>
+          </a>
+          <a href="#services" class="flex gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+            <span class="w-10 h-10 rounded-xl bg-white/10 text-white grid place-items-center text-lg"><i class="fa-brands fa-tiktok"></i></span>
+            <span><span class="block text-[13px] font-bold text-white">TikTok Viral</span><span class="block text-[11px] text-slate-400">Algorithm growth packs</span></span>
+          </a>
+          <a href="#services" class="flex gap-3 p-3 rounded-xl hover:bg-white/5 transition">
+            <span class="w-10 h-10 rounded-xl bg-slate-500/15 text-slate-200 grid place-items-center text-lg"><i class="fa-brands fa-apple"></i></span>
+            <span><span class="block text-[13px] font-bold text-white">Apple Music</span><span class="block text-[11px] text-slate-400">Premium placements</span></span>
+          </a>
+        </div>
+      </div>
+
+      <a href="#services" class="nav-link" data-nav="services">YouTube Promotion</a>
+      <a href="#services" class="nav-link" data-nav="services">Website Design</a>
+      <a href="#team" class="nav-link" data-nav="team">Team Member</a>
+      <a href="#comments" class="nav-link" data-nav="comments">Comments</a>
+      <a href="#about" class="nav-link" data-nav="about">About Us</a>
+      <button onclick="openInvoice()" class="nav-link flex items-center gap-1.5"><i class="fa-solid fa-file-invoice text-growfy"></i> Invoice Tracking</button>
+      <button onclick="toggleChat(true)" class="nav-link">Support</button>
     </nav>
+
+    <div class="flex items-center gap-3">
+      <button onclick="openInvoice()" class="hidden md:flex btn-primary text-[12px] font-bold px-4 py-2 rounded-lg items-center gap-2"><i class="fa-solid fa-magnifying-glass"></i> Track Order</button>
+      <button id="menuBtn" aria-label="Menu" class="lg:hidden w-10 h-10 grid place-items-center rounded-lg border border-white/15 bg-white/5 text-white"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="lg:hidden hidden border-t border-white/10 bg-[#080E1A] px-5 py-4 max-h-[75vh] overflow-y-auto">
+    <div class="grid gap-1 text-[14px] font-semibold">
+      <a href="#home" class="mob-link py-2.5 border-b border-white/5">Home</a>
+      <a href="#portfolio" class="mob-link py-2.5 border-b border-white/5">Portfolio</a>
+      <a href="#services" class="mob-link py-2.5 border-b border-white/5">Services • YouTube Promotion • Website Design</a>
+      <a href="#team" class="mob-link py-2.5 border-b border-white/5">Team Member</a>
+      <a href="#comments" class="mob-link py-2.5 border-b border-white/5">Comments</a>
+      <a href="#about" class="mob-link py-2.5 border-b border-white/5">About Us</a>
+      <div class="flex gap-2 py-3">
+        <button onclick="openInvoice()" class="flex-1 btn-primary rounded-lg py-2.5 text-[13px] font-bold">Invoice Tracking</button>
+        <button onclick="toggleChat(true)" class="flex-1 btn-ghost rounded-lg py-2.5 text-[13px] font-bold">Support</button>
+      </div>
+    </div>
   </div>
 </header>
 
 <!-- ================= HERO ================= -->
-<section class="hero" id="home">
-  <svg class="hero-deco" width="520" height="300" viewBox="0 0 520 300" fill="none" aria-hidden="true">
-    <g stroke="#2e9bff" stroke-width="3">
-      <polyline points="10,240 90,190 170,215 250,140 330,170 410,90 500,120" fill="none"/>
-    </g>
-    <g fill="#2e9bff" opacity=".55">
-      <rect x="30" y="250" width="26" height="40" rx="4"/><rect x="110" y="230" width="26" height="60" rx="4"/>
-      <rect x="190" y="245" width="26" height="45" rx="4"/><rect x="270" y="205" width="26" height="85" rx="4"/>
-      <rect x="350" y="225" width="26" height="65" rx="4"/><rect x="430" y="180" width="26" height="110" rx="4"/>
-    </g>
-  </svg>
-  <div class="container hero-grid">
-    <div class="hero-copy">
-      <div class="badge-wrap" id="badgeWrap">
-        <button class="badge" id="badgeBtn" aria-haspopup="true" aria-expanded="false"><span id="badgeText">Grow Your Business</span> <i class="fa-solid fa-chevron-down caret"></i></button>
-        <div class="badge-menu" role="menu">
-          <button data-badge="Grow Your Business">Grow Your Business</button>
-          <button data-badge="Scale Your Reach">Scale Your Reach</button>
-          <button data-badge="Boost Your Sales">Boost Your Sales</button>
-          <button data-badge="Own Your Niche">Own Your Niche</button>
-        </div>
+<section id="home" class="relative min-h-[680px] flex items-center pt-[90px] pb-[60px] overflow-hidden">
+  <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2000&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover" alt="Growfy digital agency workspace">
+  <div class="absolute inset-0 hero-overlay"></div>
+  <div class="absolute -top-20 -left-20 w-[500px] h-[500px] bg-[#2EA3FF]/20 blur-[140px] rounded-full"></div>
+  <div class="absolute bottom-0 right-0 w-[500px] h-[400px] bg-[#7C3AED]/15 blur-[140px] rounded-full"></div>
+
+  <div class="relative max-w-[1280px] mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-12 items-center w-full">
+    <div class="reveal visible">
+      <div class="inline-flex items-center gap-2 border border-[#2EA3FF]/40 bg-[#2EA3FF]/10 rounded-full px-3.5 py-1.5 text-[10px] font-extrabold tracking-[.25em] text-[#6CC5FF]">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#2EA3FF] pulse-dot"></span> GROW YOUR BUSINESS <i class="fa-solid fa-gem text-[10px]"></i>
       </div>
-      <h1>Empowering Brands<br>In The <span class="accent">Digital Age</span></h1>
-      <p class="lead">We combine data-driven strategies with creative excellence to help your business stay relevant and competitive in today's fast-paced landscape.</p>
-      <div class="hero-cta">
-        <button class="btn btn-primary" data-open-modal="start">Get Started <i class="fa-solid fa-arrow-right"></i></button>
-        <a class="btn btn-ghost" href="#partnerships"><i class="fa-solid fa-play"></i> View Portfolio</a>
+
+      <h1 class="font-grotesk font-bold leading-[1.05] mt-5 text-[42px] sm:text-[56px] lg:text-[62px]">
+        Empowering Brands<br>In The <span class="grad-text">Digital Age</span>
+      </h1>
+
+      <p class="mt-5 text-slate-300/90 text-[14.5px] leading-relaxed max-w-[480px]">
+        We combine data-driven strategies with creative excellence to help your business stay relevant and competitive in today's fast-paced landscape.
+      </p>
+
+      <div class="flex flex-wrap gap-3 mt-7">
+        <a href="#services" class="btn-primary rounded-lg px-6 py-3 text-[13.5px] font-bold flex items-center gap-2">Get Started <i class="fa-solid fa-arrow-right text-[12px]"></i></a>
+        <button onclick="openPortfolio()" class="btn-ghost rounded-lg px-6 py-3 text-[13.5px] font-bold flex items-center gap-2">
+          <span class="w-5 h-5 rounded-full bg-white/15 grid place-items-center text-[10px]"><i class="fa-solid fa-play"></i></span> View Portfolio
+        </button>
+      </div>
+
+      <div class="flex items-center gap-4 mt-8 flex-wrap">
+        <div class="flex -space-x-3">
+          <img src="https://i.pravatar.cc/80?img=12" class="w-9 h-9 rounded-full border-2 border-[#060B14]" alt="Client avatar" loading="lazy">
+          <img src="https://i.pravatar.cc/80?img=32" class="w-9 h-9 rounded-full border-2 border-[#060B14]" alt="Client avatar" loading="lazy">
+          <img src="https://i.pravatar.cc/80?img=45" class="w-9 h-9 rounded-full border-2 border-[#060B14]" alt="Client avatar" loading="lazy">
+          <img src="https://i.pravatar.cc/80?img=56" class="w-9 h-9 rounded-full border-2 border-[#060B14]" alt="Client avatar" loading="lazy">
+          <span class="w-9 h-9 rounded-full border-2 border-[#060B14] bg-[#2EA3FF] grid place-items-center text-[10px] font-extrabold">10k+</span>
+        </div>
+        <div class="text-[12px]">
+          <div class="flex text-amber-400 text-[11px] gap-0.5">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <span class="text-white font-bold ml-1">4.9/5</span>
+          </div>
+          <span class="text-slate-400">Trusted by 10,000+ happy clients</span>
+        </div>
       </div>
     </div>
-    <div class="hero-visual">
-      <div class="hv-chip glass hv-c1"><span class="ci"><i class="fa-solid fa-users"></i></span><span><b>10k+</b><span>Happy Clients</span></span></div>
-      <div class="hv-main glass">
-        <div class="hv-head">
-          <span class="hv-ico"><i class="fa-solid fa-chart-line"></i></span>
-          <div><h4>Digital Marketing</h4><span>Live Campaign Dashboard</span></div>
+
+    <div class="relative hidden lg:block reveal visible">
+      <div class="marquee absolute -top-8 right-10 glass rounded-xl px-4 py-2.5 flex items-center gap-3 z-20">
+        <span class="w-9 h-9 rounded-lg bg-[#2EA3FF]/15 grid place-items-center text-[#2EA3FF]"><i class="fa-solid fa-users"></i></span>
+        <div>
+          <div class="font-extrabold text-[15px]">10k+</div>
+          <div class="text-[10px] text-slate-400 -mt-0.5">Happy Clients</div>
         </div>
-        <div class="hv-label"><span>Next-Gen Strategies</span><span>92%</span></div>
-        <div class="bar"><i class="b1"></i></div>
-        <div class="hv-label"><span>Audience Retention</span><span>74%</span></div>
-        <div class="bar"><i class="b2"></i></div>
       </div>
-      <div class="hv-chip glass hv-c2"><span class="ci"><i class="fa-solid fa-gauge-high"></i></span><span><b>95%</b><span>Success Rate</span></span></div>
+
+      <div class="glass rounded-2xl p-6 max-w-[430px] ml-auto mt-10 relative shadow-[0_30px_80px_rgba(0,0,0,.6)]">
+        <div class="flex items-center justify-between">
+          <span class="text-[#2EA3FF] text-2xl"><i class="fa-solid fa-chart-line"></i></span>
+          <button class="text-[11px] font-bold text-slate-300 border border-white/15 rounded-full px-3 py-1">Monthly ▾</button>
+        </div>
+        <h3 class="font-grotesk font-bold text-[20px] mt-2">Digital Marketing</h3>
+        <p class="text-[11px] text-slate-400 tracking-widest font-bold mt-0.5">NEXT-GEN STRATEGIES</p>
+
+        <div class="mt-4 flex items-center gap-3 bg-black/30 border border-[#2EA3FF]/25 rounded-xl p-3">
+          <span class="w-9 h-9 rounded-full bg-[#2EA3FF]/15 grid place-items-center text-[#2EA3FF]"><i class="fa-solid fa-bullseye"></i></span>
+          <div>
+            <div class="font-extrabold text-[14px]">95% <span class="text-[10px] font-semibold text-slate-400">Success Rate</span></div>
+            <div class="w-[220px] h-[6px] bg-white/10 rounded-full mt-1.5 overflow-hidden">
+              <div id="heroBar1" class="bar-anim h-full bg-gradient-to-r from-[#2EA3FF] to-[#7CFCFF] rounded-full"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-3 bg-black/30 border border-white/10 rounded-xl p-3">
+          <div class="flex justify-between text-[10px] font-bold text-slate-400 mb-2">
+            <span>ENGAGEMENT</span><span class="text-emerald-400">+184%</span>
+          </div>
+          <div class="flex items-end gap-1.5 h-[54px]">
+            <div class="flex-1 bg-white/10 rounded-sm" style="height:30%"></div>
+            <div class="flex-1 bg-white/10 rounded-sm" style="height:45%"></div>
+            <div class="flex-1 bg-white/10 rounded-sm" style="height:38%"></div>
+            <div class="flex-1 bg-[#2EA3FF]/60 rounded-sm" style="height:60%"></div>
+            <div class="flex-1 bg-[#2EA3FF] rounded-sm shadow-[0_0_15px_#2EA3FF]" style="height:85%"></div>
+            <div class="flex-1 bg-white/10 rounded-sm" style="height:55%"></div>
+            <div class="flex-1 bg-white/10 rounded-sm" style="height:70%"></div>
+            <div class="flex-1 bg-white/10 rounded-sm" style="height:50%"></div>
+          </div>
+          <div class="w-full h-[6px] bg-white/10 rounded-full mt-3 overflow-hidden">
+            <div id="heroBar2" class="bar-anim h-full bg-[#2EA3FF] rounded-full"></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ================= STATS ================= -->
-<section class="stats" id="stats">
-  <div class="container stats-grid">
-    <div class="stat reveal"><i class="fa-solid fa-trophy"></i><div class="num"><span class="count" data-count="19">0</span>+</div><div class="lbl">Awards Recognized<br>Globally</div></div>
-    <div class="stat reveal" data-d="80"><i class="fa-solid fa-clock-rotate-left"></i><div class="num"><span class="count" data-count="7">0</span>+</div><div class="lbl">Years of<br>Rich Experience</div></div>
-    <div class="stat reveal" data-d="160"><i class="fa-solid fa-circle-check"></i><div class="num"><span class="count" data-count="869">0</span>+</div><div class="lbl">Completed<br>Successful Projects</div></div>
-    <div class="stat reveal" data-d="240"><i class="fa-solid fa-heart"></i><div class="num"><span class="count" data-count="673">0</span>+</div><div class="lbl">Happy Clients<br>Satisfied with Quality</div></div>
+<section class="max-w-[1280px] mx-auto px-5 lg:px-8 -mt-2 py-10">
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+    <div class="glass rounded-2xl p-7 text-center card-hover reveal">
+      <div class="text-[#2EA3FF] text-[26px]"><i class="fa-solid fa-trophy"></i></div>
+      <div class="font-grotesk font-bold text-[32px] mt-2"><span class="counter" data-target="19">0</span>+</div>
+      <div class="text-[11px] text-slate-400 leading-tight mt-1">Awards Recognized<br>Globally</div>
+    </div>
+    <div class="glass rounded-2xl p-7 text-center card-hover reveal">
+      <div class="text-[#2EA3FF] text-[26px]"><i class="fa-solid fa-clock-rotate-left"></i></div>
+      <div class="font-grotesk font-bold text-[32px] mt-2"><span class="counter" data-target="7">0</span>+</div>
+      <div class="text-[11px] text-slate-400 leading-tight mt-1">Years of<br>Rich Experience</div>
+    </div>
+    <div class="glass rounded-2xl p-7 text-center card-hover reveal">
+      <div class="text-[#2EA3FF] text-[26px]"><i class="fa-solid fa-circle-check"></i></div>
+      <div class="font-grotesk font-bold text-[32px] mt-2"><span class="counter" data-target="869">0</span>+</div>
+      <div class="text-[11px] text-slate-400 leading-tight mt-1">Completed<br>Successful Projects</div>
+    </div>
+    <div class="glass rounded-2xl p-7 text-center card-hover reveal">
+      <div class="text-[#2EA3FF] text-[26px]"><i class="fa-solid fa-heart"></i></div>
+      <div class="font-grotesk font-bold text-[32px] mt-2"><span class="counter" data-target="673">0</span>+</div>
+      <div class="text-[11px] text-slate-400 leading-tight mt-1">Happy Clients<br>Satisfied with Quality</div>
+    </div>
   </div>
 </section>
 
-<!-- ================= ABOUT / WELCOME ================= -->
-<section class="about" id="about">
-  <div class="container">
-    <div class="about-card reveal">
-      <div class="media">
-        <div class="media-frame">
-          <svg viewBox="0 0 520 400" role="img" aria-label="Illustration of a strategist working at a desk">
-            <rect width="520" height="400" fill="#171d24"/>
-            <rect x="36" y="34" width="196" height="150" rx="10" fill="#1f2731"/>
-            <g fill="#28313c">
-              <rect x="48" y="48" width="172" height="10" rx="5"/><rect x="48" y="68" width="172" height="10" rx="5"/>
-              <rect x="48" y="88" width="172" height="10" rx="5"/><rect x="48" y="108" width="172" height="10" rx="5"/>
-              <rect x="48" y="128" width="172" height="10" rx="5"/><rect x="48" y="148" width="172" height="10" rx="5"/>
-            </g>
-            <rect x="292" y="52" width="86" height="104" rx="8" fill="#202933"/>
-            <polyline points="304,132 326,104 344,118 366,80" stroke="#2e9bff" stroke-width="4" fill="none" stroke-linecap="round"/>
-            <circle cx="366" cy="80" r="6" fill="#7cc5ff"/>
-            <rect x="418" y="238" width="46" height="42" rx="6" fill="#2a323d"/>
-            <g fill="#2f7d4f"><circle cx="428" cy="222" r="14"/><circle cx="448" cy="210" r="16"/><circle cx="460" cy="228" r="12"/></g>
-            <path d="M212 128 q48 -44 96 0 v96 q-48 30 -96 0 z" fill="#3b2a23"/>
-            <circle cx="260" cy="158" r="34" fill="#e9b48c"/>
-            <path d="M226 152 q10 -34 34 -34 q24 0 34 34 q-16 -16 -34 -16 q-18 0 -34 16z" fill="#3b2a23"/>
-            <path d="M196 292 q64 -52 128 0 v14 h-128 z" fill="#242c36"/>
-            <path d="M248 262 l12 22 l12 -22 q-12 -10 -24 0z" fill="#e6ebf0"/>
-            <rect x="52" y="292" width="416" height="16" rx="8" fill="#2b333e"/>
-            <rect x="80" y="308" width="12" height="60" rx="6" fill="#232a34"/>
-            <rect x="428" y="308" width="12" height="60" rx="6" fill="#232a34"/>
-            <path d="M300 292 l84 -8 v-58 l-84 8 z" fill="#414c59"/>
-            <rect x="296" y="286" width="96" height="8" rx="4" fill="#39424d"/>
-            <rect x="150" y="270" width="26" height="22" rx="5" fill="#2e9bff"/>
-            <path d="M176 274 q12 4 0 14" stroke="#2e9bff" stroke-width="4" fill="none"/>
-          </svg>
-        </div>
-        <a class="soc-float sf-yt" href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a class="soc-float sf-fb" href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a class="soc-float sf-tt" href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-        <span class="soc-float sf-bolt" aria-hidden="true"><i class="fa-solid fa-bolt"></i></span>
+<!-- ================= WELCOME / ABOUT ================= -->
+<section id="about" class="max-w-[1280px] mx-auto px-5 lg:px-8 py-8">
+  <div class="glass rounded-[24px] p-6 md:p-10 grid lg:grid-cols-[380px_1fr] gap-10 items-center relative overflow-hidden reveal">
+    <div class="absolute top-0 right-0 w-[400px] h-[300px] bg-[#2EA3FF]/10 blur-[100px]"></div>
+
+    <div class="relative mx-auto w-full max-w-[340px]">
+      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=700&auto=format&fit=crop" class="w-full h-[420px] object-cover rounded-2xl border border-white/10" alt="Growfy agency strategist" loading="lazy">
+      <span class="absolute -left-5 top-1/2 -translate-y-1/2 w-11 h-11 rounded-xl bg-[#0B1322] border border-white/10 grid place-items-center text-red-500 text-lg shadow-xl"><i class="fa-brands fa-youtube"></i></span>
+      <span class="absolute -left-4 bottom-10 w-10 h-10 rounded-xl bg-[#0B1322] border border-white/10 grid place-items-center text-[#1877F2] shadow-xl"><i class="fa-brands fa-facebook-f"></i></span>
+      <span class="absolute -right-4 top-8 w-12 h-12 rounded-xl bg-[#2EA3FF] grid place-items-center text-white text-xl shadow-[0_10px_30px_rgba(46,163,255,.5)] rotate-6"><i class="fa-solid fa-bolt"></i></span>
+      <span class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-11 h-11 rounded-xl bg-white grid place-items-center text-black text-lg shadow-xl"><i class="fa-brands fa-tiktok"></i></span>
+    </div>
+
+    <div>
+      <p class="eyebrow">Start Your Business With Our Services</p>
+      <h2 class="font-grotesk font-bold text-[32px] md:text-[38px] leading-tight mt-2">
+        Welcome to <span class="grad-text">Growfy</span><br><span class="grad-text">Agency</span>
+      </h2>
+
+      <div class="flex gap-3 mt-5">
+        <span class="tick mt-1"><i class="fa-brands fa-instagram"></i></span>
+        <p class="text-[13.5px] text-slate-300/90 leading-relaxed">
+          At Growfy, we blend cutting-edge technology with strategic creative thinking. Whether it's Digital Marketing, Graphic Design, or Web Development, our mission is to scale your brand through measurable results and premium user experiences.
+        </p>
       </div>
-      <div>
-        <span class="eyebrow">Start Your Business With Our Services</span>
-        <h2>Welcome to <span class="accent">Growfy Agency</span></h2>
-        <p>At Growfy, we blend cutting-edge technology with strategic creative thinking. Whether it's Digital Marketing, Graphic Design, or Web Development, our mission is to scale your brand through measurable results and premium user experiences.</p>
-        <div class="about-cta">
-          <button class="btn btn-primary" data-open-modal="start">Get Started <i class="fa-solid fa-arrow-right"></i></button>
-          <a class="btn btn-ghost" href="#contact">Contact Us</a>
-        </div>
+
+      <div class="flex flex-wrap gap-3 mt-7">
+        <button onclick="document.getElementById('services').scrollIntoView()" class="btn-primary rounded-lg px-6 py-3 text-[13px] font-bold">Get Started <i class="fa-solid fa-arrow-right ml-1 text-[11px]"></i></button>
+        <button onclick="toggleChat(true)" class="btn-ghost rounded-lg px-6 py-3 text-[13px] font-bold">Contact Us</button>
+      </div>
+
+      <div class="flex flex-wrap gap-6 mt-6 text-[12px] text-slate-400 font-semibold">
+        <span class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-emerald-400"></i> Verified Agency</span>
+        <span class="flex items-center gap-2"><i class="fa-solid fa-bolt text-amber-400"></i> Fast Delivery</span>
+        <span class="flex items-center gap-2"><i class="fa-solid fa-headset text-[#2EA3FF]"></i> 24/7 Support</span>
       </div>
     </div>
   </div>
+</section>
+
+<!-- ================= PORTFOLIO ================= -->
+<section id="portfolio" class="max-w-[1280px] mx-auto px-5 lg:px-8 py-14">
+  <div class="text-center reveal">
+    <p class="eyebrow">Our Work Showcase</p>
+    <h2 class="font-grotesk font-bold text-[30px] md:text-[36px] mt-2">Featured <span class="grad-text">Portfolio</span></h2>
+    <div class="flex flex-wrap justify-center gap-2 mt-6" id="filterBtns">
+      <button data-filter="all" class="fbtn btn-primary text-[12px] font-bold px-5 py-2 rounded-full">All Work</button>
+      <button data-filter="web" class="fbtn btn-ghost text-[12px] font-bold px-5 py-2 rounded-full">Web Design</button>
+      <button data-filter="brand" class="fbtn btn-ghost text-[12px] font-bold px-5 py-2 rounded-full">Branding</button>
+      <button data-filter="marketing" class="fbtn btn-ghost text-[12px] font-bold px-5 py-2 rounded-full">Marketing</button>
+    </div>
+  </div>
+  <div id="portfolioGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8"></div>
 </section>
 
 <!-- ================= SERVICES ================= -->
-<section class="services" id="services">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Boost Your Presence</span>
-      <h2>Our Most Ordered Services</h2>
+<section id="services" class="relative py-16 overflow-hidden">
+  <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2000&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-25" alt="" loading="lazy">
+  <div class="absolute inset-0 bg-gradient-to-b from-[#060B14] via-[#060B14]/80 to-[#060B14]"></div>
+
+  <div class="relative max-w-[1180px] mx-auto px-5">
+    <div class="text-center reveal">
+      <p class="eyebrow">Boost Your Presence</p>
+      <h2 class="font-grotesk font-bold text-[30px] md:text-[36px] mt-2">Our Most Ordered Services</h2>
     </div>
-    <div class="svc-grid">
-      <article class="svc reveal" id="svc-ig"><span class="ico"><i class="fa-brands fa-instagram"></i></span><h3>Instagram</h3><p>Grow your followers and engagement with our premium organic strategies.</p></article>
-      <article class="svc reveal" data-d="80" id="svc-yt"><span class="ico"><i class="fa-brands fa-youtube"></i></span><h3>YouTube Service</h3><p>Increase views, watch time and subscribers for your channel monetization.</p></article>
-      <article class="svc reveal" data-d="160" id="svc-fb"><span class="ico"><i class="fa-brands fa-facebook-f"></i></span><h3>Facebook Service</h3><p>Professional page growth and ad campaign management for your brand.</p></article>
-      <article class="svc reveal" id="svc-sp"><span class="ico"><i class="fa-brands fa-spotify"></i></span><h3>Spotify Service</h3><p>Boost your streams and monthly listeners with targeted music promotion.</p></article>
-      <article class="svc reveal" data-d="80" id="svc-tt"><span class="ico"><i class="fa-brands fa-tiktok"></i></span><h3>TikTok Service</h3><p>Go viral with our specialized TikTok algorithm growth packages.</p></article>
-      <article class="svc reveal" data-d="160" id="svc-am"><span class="ico"><i class="fa-brands fa-apple"></i></span><h3>Apple Music</h3><p>Premium placement and stream boosting for high-tier music artists.</p></article>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-10" id="serviceGrid"></div>
+
+    <div class="glass rounded-2xl mt-6 p-4 flex flex-col md:flex-row items-center gap-4 justify-between reveal">
+      <div class="flex items-center gap-3">
+        <span class="w-11 h-11 rounded-xl bg-[#2EA3FF]/15 grid place-items-center text-[#2EA3FF] text-xl"><i class="fa-solid fa-cart-shopping"></i></span>
+        <div>
+          <div class="font-bold text-[14px]">Custom order? Build your own growth package</div>
+          <div class="text-[12px] text-slate-400">Combine any services • Instant invoice • <span id="cartCount" class="text-[#2EA3FF] font-bold">0 items</span> in cart</div>
+        </div>
+      </div>
+      <div class="flex gap-2">
+        <button onclick="openInvoice()" class="btn-ghost rounded-lg px-5 py-2.5 text-[12px] font-bold">Track Order</button>
+        <button onclick="checkout()" class="btn-primary rounded-lg px-6 py-2.5 text-[12px] font-bold">Checkout <i class="fa-solid fa-arrow-right ml-1"></i></button>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ================= GROWTH ================= -->
-<section class="growth" id="growth">
-  <div class="container">
-    <div class="sec-head reveal">
-      <h2>Accelerating Your <span class="accent">Social Media</span> Growth</h2>
+<!-- ================= ACCELERATING ================= -->
+<section class="max-w-[1280px] mx-auto px-5 lg:px-8 py-14">
+  <h2 class="text-center font-grotesk font-bold text-[28px] md:text-[34px] reveal">Accelerating Your <span class="grad-text">Social Media</span> Growth</h2>
+
+  <div class="grid md:grid-cols-3 gap-4 mt-8">
+    <div class="glass rounded-2xl p-6 card-hover reveal">
+      <div class="text-[#2EA3FF] text-[24px]"><i class="fa-solid fa-rocket"></i></div>
+      <h3 class="font-bold text-[15px] mt-3">Creative Consistency</h3>
+      <p class="text-[12px] text-slate-400 leading-relaxed mt-2">We blend high-quality visuals and compelling storytelling to capture attention and keep your audience engaged across all platforms.</p>
+      <button onclick="showToast('Creative kit added to your plan')" class="mt-4 text-[12px] font-bold text-[#2EA3FF]">Learn more →</button>
     </div>
-    <div class="g-grid">
-      <article class="g-card reveal"><i class="fa-solid fa-rocket"></i><h3>Creative Consistency</h3><p>We blend high-quality visuals and compelling storytelling to capture attention and keep your audience engaged across all platforms.</p></article>
-      <article class="g-card reveal" data-d="80"><i class="fa-solid fa-chart-line"></i><h3>Data-Driven Strategy</h3><p>Advanced targeting and optimized paid campaigns ensure your brand message reaches the right audience at the perfect time.</p></article>
-      <article class="g-card reveal" data-d="160"><i class="fa-solid fa-microchip"></i><h3>Continuous Analysis</h3><p>Sustained growth comes from studying performance metrics and refining your approach based on real-time user behavior.</p></article>
+    <div class="glass rounded-2xl p-6 card-hover reveal">
+      <div class="text-[#2EA3FF] text-[24px]"><i class="fa-solid fa-chart-line"></i></div>
+      <h3 class="font-bold text-[15px] mt-3">Data-Driven Strategy</h3>
+      <p class="text-[12px] text-slate-400 leading-relaxed mt-2">Advanced targeting and optimized paid campaigns ensure your brand message reaches the right audience at the perfect time.</p>
+      <button onclick="showToast('Analytics demo scheduled')" class="mt-4 text-[12px] font-bold text-[#2EA3FF]">Learn more →</button>
     </div>
-    <div class="g-wide">
-      <article class="gw reveal"><h3>Meaningful <span class="accent">Engagement</span></h3><p>Success depends on two-way interactions. We help you spark dialogue, respond to comments, and encourage user-generated content that builds authentic community trust and increases visibility.</p></article>
-      <article class="gw reveal" data-d="100"><h3>Influencer <span class="accent">Partnerships</span></h3><p>Accelerate growth with creators who resonate with your values. Authentic endorsements from trusted influencers introduce your brand to highly engaged new audiences and enhance credibility instantly.</p></article>
+    <div class="glass rounded-2xl p-6 card-hover reveal">
+      <div class="text-[#2EA3FF] text-[24px]"><i class="fa-solid fa-microchip"></i></div>
+      <h3 class="font-bold text-[15px] mt-3">Continuous Analysis</h3>
+      <p class="text-[12px] text-slate-400 leading-relaxed mt-2">Sustained growth comes from studying performance metrics and refining your approach based on real-time user behavior.</p>
+      <button onclick="showToast('Free audit report requested')" class="mt-4 text-[12px] font-bold text-[#2EA3FF]">Learn more →</button>
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-4 mt-4">
+    <div class="glass rounded-2xl p-7 card-hover reveal" style="border-left:2px solid #2EA3FF">
+      <h3 class="font-grotesk font-bold text-[19px]">Meaningful <span class="grad-text">Engagement</span></h3>
+      <p class="text-[12.5px] text-slate-300/85 leading-relaxed mt-3">Success depends on two-way interactions. We help you spark dialogue, respond to comments, and encourage user-generated content that builds authentic community trust and increases visibility.</p>
+      <div class="flex flex-wrap gap-2 mt-5">
+        <span class="text-[11px] bg-white/5 border border-white/10 rounded-full px-3 py-1.5 font-semibold">💬 3.2x Comments</span>
+        <span class="text-[11px] bg-white/5 border border-white/10 rounded-full px-3 py-1.5 font-semibold">❤️ 5.8x Reach</span>
+      </div>
+    </div>
+    <div class="glass rounded-2xl p-7 card-hover reveal" style="border-left:2px solid #2EA3FF">
+      <h3 class="font-grotesk font-bold text-[19px]">Influencer <span class="grad-text">Partnerships</span></h3>
+      <p class="text-[12.5px] text-slate-300/85 leading-relaxed mt-3">Accelerate growth with creators who resonate with your values. Authentic endorsements from trusted influencers introduce your brand to highly engaged new audiences and enhance credibility instantly.</p>
+      <div class="flex flex-wrap gap-2 mt-5">
+        <span class="text-[11px] bg-white/5 border border-white/10 rounded-full px-3 py-1.5 font-semibold">🤝 500+ Creators</span>
+        <span class="text-[11px] bg-white/5 border border-white/10 rounded-full px-3 py-1.5 font-semibold">⭐ 4.9 Rating</span>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ================= WHY ================= -->
-<section class="why" id="why">
-  <div class="container why-grid">
+<!-- ================= WHY CHOOSE ================= -->
+<section class="relative py-16 overflow-hidden">
+  <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=2000&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-20" alt="" loading="lazy">
+  <div class="absolute inset-0 bg-gradient-to-r from-[#060B14] via-[#060B14]/85 to-[#060B14]/60"></div>
+
+  <div class="relative max-w-[1280px] mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
     <div class="reveal">
-      <span class="eyebrow">The Growfy Edge</span>
-      <h2>Why Choose <span class="accent">Growfy Agency?</span></h2>
-      <p>Growfy Agency helps your brand stand out with visually striking, meaningful, and emotionally engaging content. We blend modern design trends with powerful storytelling to ensure your message connects instantly.</p>
-      <p>Beyond design, we deliver smart, data-driven digital marketing strategies. Our SEO, PPC, and Social Media management ensure higher visibility and better-quality traffic for long-term growth.</p>
-      <a class="btn btn-primary" href="#about">Learn More About Us <i class="fa-solid fa-arrow-right"></i></a>
+      <p class="eyebrow">The Growfy Edge</p>
+      <h2 class="font-grotesk font-bold text-[32px] md:text-[40px] leading-tight mt-2">Why Choose <span class="grad-text">Growfy Agency?</span></h2>
+      <p class="text-[13px] text-slate-300/85 leading-relaxed mt-5">Growfy Agency helps your brand stand out with visually striking, meaningful, and emotionally engaging content. We blend modern design trends with powerful storytelling to ensure your message connects instantly.</p>
+      <p class="text-[13px] text-slate-300/85 leading-relaxed mt-4">Beyond design, we deliver smart, data-driven digital marketing strategies. Our SEO, PPC, and Social Media management ensure higher visibility and better-quality traffic for long-term growth.</p>
+
+      <div class="flex flex-wrap items-center gap-3 mt-6">
+        <button onclick="toggleChat(true)" class="btn-primary rounded-full px-6 py-3 text-[13px] font-bold">Learn More About Us <i class="fa-solid fa-arrow-right ml-1"></i></button>
+        <button onclick="playVideo()" aria-label="Play showreel" class="w-[48px] h-[48px] rounded-full btn-ghost grid place-items-center"><i class="fa-solid fa-play"></i></button>
+      </div>
+
+      <div class="grid grid-cols-3 gap-3 mt-8 max-w-[420px]">
+        <div>
+          <div class="font-extrabold text-[20px] text-[#2EA3FF]"><span class="counter" data-target="98">0</span>%</div>
+          <div class="text-[11px] text-slate-400">Retention</div>
+        </div>
+        <div>
+          <div class="font-extrabold text-[20px] text-[#2EA3FF]"><span class="counter" data-target="24">0</span>/7</div>
+          <div class="text-[11px] text-slate-400">Support</div>
+        </div>
+        <div>
+          <div class="font-extrabold text-[20px] text-[#2EA3FF]"><span class="counter" data-target="150">0</span>+</div>
+          <div class="text-[11px] text-slate-400">Experts</div>
+        </div>
+      </div>
     </div>
-    <div class="why-list">
-      <div class="w-card reveal"><span class="w-ico"><i class="fa-solid fa-pen-nib"></i></span><div><h3>Creative Purpose</h3><p>Every pixel and word is crafted to strengthen your identity and leave a lasting impression.</p></div></div>
-      <div class="w-card reveal" data-d="90"><span class="w-ico"><i class="fa-solid fa-bullseye"></i></span><div><h3>Data-Driven Results</h3><p>We use advanced analytics to monitor and optimize campaigns for maximum ROI.</p></div></div>
-      <div class="w-card reveal" data-d="180"><span class="w-ico"><i class="fa-solid fa-arrows-rotate"></i></span><div><h3>Continuous Growth</h3><p>Our proactive approach ensures your brand stays ahead in a competitive digital landscape.</p></div></div>
+
+    <div class="grid gap-4">
+      <div class="glass rounded-2xl p-5 flex gap-4 card-hover reveal">
+        <span class="w-11 h-11 rounded-xl bg-[#2EA3FF]/10 grid place-items-center text-[#2EA3FF] shrink-0"><i class="fa-solid fa-pen"></i></span>
+        <div>
+          <h4 class="font-bold text-[14px]">Creative Purpose</h4>
+          <p class="text-[12px] text-slate-400 mt-1">Every pixel and word is crafted to strengthen your identity and leave a lasting impression.</p>
+        </div>
+      </div>
+      <div class="glass rounded-2xl p-5 flex gap-4 card-hover reveal">
+        <span class="w-11 h-11 rounded-xl bg-[#2EA3FF]/10 grid place-items-center text-[#2EA3FF] shrink-0"><i class="fa-solid fa-bullseye"></i></span>
+        <div>
+          <h4 class="font-bold text-[14px]">Data-Driven Results</h4>
+          <p class="text-[12px] text-slate-400 mt-1">We use advanced analytics to monitor and optimize campaigns for maximum ROI.</p>
+        </div>
+      </div>
+      <div class="glass rounded-2xl p-5 flex gap-4 card-hover reveal">
+        <span class="w-11 h-11 rounded-xl bg-[#2EA3FF]/10 grid place-items-center text-[#2EA3FF] shrink-0"><i class="fa-solid fa-rotate"></i></span>
+        <div>
+          <h4 class="font-bold text-[14px]">Continuous Growth</h4>
+          <p class="text-[12px] text-slate-400 mt-1">Our proactive approach ensures your brand stays ahead in a competitive digital landscape.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ================= PARTNERSHIPS ================= -->
-<section class="partners" id="partnerships">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Global Impact</span>
-      <h2>Our Elite <span class="accent">Partnerships</span></h2>
+<section id="team" class="max-w-[1320px] mx-auto px-5 lg:px-8 py-14">
+  <div class="text-center reveal">
+    <p class="eyebrow">Global Impact</p>
+    <h2 class="font-grotesk font-bold text-[30px] md:text-[36px] mt-2">Our Elite <span class="grad-text">Partnerships</span></h2>
+  </div>
+
+  <div class="relative mt-8">
+    <div class="flex justify-end gap-2 mb-4">
+      <button onclick="scrollTeam(-1)" aria-label="Previous" class="w-10 h-10 rounded-full btn-ghost grid place-items-center"><i class="fa-solid fa-chevron-left"></i></button>
+      <button onclick="scrollTeam(1)" aria-label="Next" class="w-10 h-10 rounded-full btn-ghost grid place-items-center"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
-    <div class="p-grid">
-      <article class="p-card reveal">
-        <div class="avatar" style="background:linear-gradient(135deg,#b98a4e,#6d4a26)">KW</div>
-        <h3>Kevin Willes</h3><div class="p-role">Music Producer</div>
-        <p>Scaling international music distribution through strategic digital presence and modern branding.</p>
-        <div class="p-soc"><a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="https://spotify.com" target="_blank" rel="noopener" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a></div>
-      </article>
-      <article class="p-card reveal" data-d="70">
-        <div class="avatar" style="background:linear-gradient(135deg,#5f7d8c,#2c3e49)">JL</div>
-        <h3>Johnny Lightning</h3><div class="p-role">Rock Artist</div>
-        <p>Implementing automated song-selling systems and premium e-commerce solutions for artists.</p>
-        <div class="p-soc"><a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a><a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></div>
-      </article>
-      <article class="p-card reveal" data-d="140">
-        <div class="avatar" style="background:linear-gradient(135deg,#7d8ca0,#3a4657)">AH</div>
-        <h3>Amir Hossain</h3><div class="p-role">Tech Entrepreneur</div>
-        <p>Transforming digital ecosystems with high-conversion UI/UX and advanced Laravel architectures.</p>
-        <div class="p-soc"><a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a><a href="https://x.com" target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></div>
-      </article>
-      <article class="p-card reveal" data-d="210">
-        <div class="avatar" style="background:linear-gradient(135deg,#c9b23f,#7a6a1e)">SJ</div>
-        <h3>Sarah Jenkins</h3><div class="p-role">Digital Creator</div>
-        <p>Optimizing social media growth with targeted content strategies and data-driven marketing.</p>
-        <div class="p-soc"><a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a><a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></div>
-      </article>
-      <article class="p-card reveal" data-d="280">
-        <div class="avatar" style="background:linear-gradient(135deg,#a08d76,#57493a)">MR</div>
-        <h3>Marcus Reed</h3><div class="p-role">CEO, Emo Bazar</div>
-        <p>Revolutionizing the e-commerce shopping experience with premium WooCommerce optimization.</p>
-        <div class="p-soc"><a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a><a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></div>
-      </article>
+    <div id="teamRow" class="flex lg:grid lg:grid-cols-5 gap-4 overflow-x-auto lg:overflow-visible pb-2 snap-x hide-scroll"></div>
+  </div>
+</section>
+
+<!-- ================= COMMENTS / TESTIMONIALS ================= -->
+<section id="comments" class="max-w-[1100px] mx-auto px-5 py-10">
+  <div class="glass rounded-[24px] p-6 md:p-10 relative overflow-hidden reveal">
+    <div class="absolute -top-20 left-1/3 w-[400px] h-[300px] bg-[#2EA3FF]/15 blur-[100px]"></div>
+
+    <p class="eyebrow text-center">Client Love</p>
+    <h2 class="font-grotesk font-bold text-[28px] text-center mt-2">What Our <span class="grad-text">Clients Say</span></h2>
+
+    <div class="overflow-hidden mt-8 rounded-2xl">
+      <div id="testiTrack" class="testi-track flex"></div>
+    </div>
+
+    <div class="flex items-center justify-center gap-3 mt-6">
+      <button onclick="moveTesti(-1)" aria-label="Previous review" class="w-10 h-10 rounded-full btn-ghost grid place-items-center"><i class="fa-solid fa-arrow-left"></i></button>
+      <div id="testiDots" class="flex gap-2"></div>
+      <button onclick="moveTesti(1)" aria-label="Next review" class="w-10 h-10 rounded-full btn-primary grid place-items-center"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+
+    <div class="mt-8 border-t border-white/10 pt-6 grid md:grid-cols-[1fr_auto] gap-4 items-end">
+      <div class="grid sm:grid-cols-2 gap-3">
+        <input id="revName" placeholder="Your name" class="bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-[13px] w-full placeholder:text-slate-500">
+        <input id="revText" placeholder="Write your experience with Growfy..." class="bg-black/30 border border-white/10 rounded-xl px-4 py-3 text-[13px] w-full placeholder:text-slate-500">
+      </div>
+      <button onclick="addReview()" class="btn-primary rounded-xl px-6 py-3 text-[13px] font-bold whitespace-nowrap"><i class="fa-solid fa-paper-plane mr-2"></i>Post Comment</button>
     </div>
   </div>
 </section>
 
 <!-- ================= FAQ ================= -->
-<section class="faq" id="faq">
-  <div class="container">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Questions &amp; Answers</span>
-      <h2>Frequently Asked<br><span class="accent">Questions</span></h2>
+<section id="faq" class="relative py-16 overflow-hidden">
+  <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2000&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-15" alt="" loading="lazy">
+  <div class="absolute inset-0 bg-gradient-to-b from-[#060B14] via-[#060B14]/70 to-[#060B14]"></div>
+
+  <div class="relative max-w-[760px] mx-auto px-5">
+    <div class="text-center reveal">
+      <p class="eyebrow">Questions &amp; Answers</p>
+      <h2 class="font-grotesk font-bold text-[30px] md:text-[36px] mt-2">Frequently Asked</h2>
+      <p class="eyebrow mt-2 opacity-70">Questions</p>
     </div>
-    <div class="acc reveal" id="acc">
-      <div class="acc-item open">
-        <button class="acc-btn" aria-expanded="true">What services does Growfy Agency offer? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></button>
-        <div class="acc-body"><p>We provide comprehensive digital solutions including Social Media Marketing, SEO optimization, Web Development, Graphic Design, and Paid Ad management (PPC) tailored to scale your brand.</p></div>
+    <div id="faqList" class="grid gap-3 mt-8"></div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="max-w-[1180px] mx-auto px-5 pb-14">
+  <div class="rounded-[24px] p-8 md:p-12 relative overflow-hidden reveal" style="background:linear-gradient(135deg,#0E1E3A 0%,#0A2A5A 50%,#0E1E3A 100%);border:1px solid rgba(46,163,255,.3)">
+    <div class="absolute -right-20 -top-20 w-[350px] h-[350px] bg-[#2EA3FF]/25 blur-[100px] rounded-full"></div>
+    <div class="relative grid md:grid-cols-[1fr_auto] gap-6 items-center">
+      <div>
+        <h2 class="font-grotesk font-bold text-[26px] md:text-[32px]">Ready to grow 10x faster?</h2>
+        <p class="text-[13px] text-slate-300 mt-2">Get a free strategy call + custom growth audit worth $299. No commitment.</p>
+        <div class="flex flex-wrap gap-2 mt-4 text-[11px] font-bold">
+          <span class="bg-emerald-400/15 text-emerald-300 border border-emerald-400/30 rounded-full px-3 py-1">✓ Free Audit</span>
+          <span class="bg-white/10 border border-white/20 rounded-full px-3 py-1">✓ 24h Delivery</span>
+          <span class="bg-white/10 border border-white/20 rounded-full px-3 py-1">✓ Money-back Guarantee</span>
+        </div>
       </div>
-      <div class="acc-item">
-        <button class="acc-btn" aria-expanded="false">How long does it take to see results? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></button>
-        <div class="acc-body"><p>Most campaigns show measurable traction within 4–6 weeks. Compounding growth typically kicks in around month three, depending on the platform, budget and your starting point.</p></div>
-      </div>
-      <div class="acc-item">
-        <button class="acc-btn" aria-expanded="false">Do you provide customized packages? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></button>
-        <div class="acc-body"><p>Yes. Every engagement starts with a discovery call so we can build a package around your goals, timeline and budget — no one-size-fits-all retainers.</p></div>
-      </div>
-      <div class="acc-item">
-        <button class="acc-btn" aria-expanded="false">Which platforms do you specialize in? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></button>
-        <div class="acc-body"><p>Instagram, YouTube, Facebook, TikTok, Spotify and Apple Music — plus search (Google) and owned web properties built for conversion.</p></div>
-      </div>
-      <div class="acc-item">
-        <button class="acc-btn" aria-expanded="false">How do I get started? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></button>
-        <div class="acc-body"><p>Click any "Get Started" button, book your free strategy call, and we'll send a tailored growth roadmap within 48 hours.</p></div>
+      <div class="flex flex-col gap-3 w-full md:w-[260px]">
+        <input id="ctaEmail" type="email" placeholder="Enter your email" class="bg-black/40 border border-white/15 rounded-xl px-4 py-3 text-[13px] placeholder:text-slate-500 w-full">
+        <button onclick="claimOffer()" class="btn-primary rounded-xl px-6 py-3 text-[13px] font-bold">Claim Free Audit <i class="fa-solid fa-arrow-right ml-1"></i></button>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ================= FOOTER ================= -->
-<footer id="contact">
-  <div class="container">
-    <div class="f-grid">
-      <div class="f-brand">
-        <a href="#home" class="logo"><i class="fa-solid fa-chart-line"></i> Growfy</a>
-        <p>At Growfy Agency, we blend cutting-edge technology with strategic thinking to facilitate digital success for brands thriving online.</p>
-        <div class="f-soc">
-          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-          <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-          <a href="https://spotify.com" target="_blank" rel="noopener" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a>
-        </div>
+<footer class="border-t border-white/10 bg-[#04070E]">
+  <div class="max-w-[1280px] mx-auto px-5 lg:px-8 py-12 grid md:grid-cols-2 lg:grid-cols-[1.2fr_.8fr_.8fr_1fr] gap-10">
+    <div>
+      <div class="flex items-center gap-2 bg-white rounded-[8px] px-3 py-1.5 w-fit">
+        <span class="w-6 h-6 rounded-md bg-gradient-to-br from-[#38B6FF] to-[#0a4eff] grid place-items-center text-white text-[13px]"><i class="fa-solid fa-rocket"></i></span>
+        <span class="font-grotesk font-bold text-[#0B1322]">Growfy</span>
       </div>
-      <div class="f-col">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="#services" data-flash="#svc-yt"><i class="fa-solid fa-angle-right"></i> YouTube Marketing</a></li>
-          <li><a href="#services" data-flash="#svc-sp"><i class="fa-solid fa-angle-right"></i> Spotify Promotion</a></li>
-          <li><button class="fl" data-open-modal="start" data-service="Graphic Design"><i class="fa-solid fa-angle-right"></i> Graphic Design</button></li>
-          <li><button class="fl" data-open-modal="start" data-service="Website Design"><i class="fa-solid fa-angle-right"></i> Website Design</button></li>
-          <li><a href="#services" data-flash="#svc-tt"><i class="fa-solid fa-angle-right"></i> TikTok Strategy</a></li>
-        </ul>
-      </div>
-      <div class="f-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="#about"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
-          <li><button class="fl" data-toast="Our blog launches soon — stay tuned!"><i class="fa-solid fa-angle-right"></i> Our Blog</button></li>
-          <li><button class="fl" data-toast="We're hiring! Send your portfolio to growfyagency@gmail.com"><i class="fa-solid fa-angle-right"></i> Career</button></li>
-          <li><a href="#contact"><i class="fa-solid fa-angle-right"></i> Help &amp; Support</a></li>
-          <li><button class="fl" data-open-modal="invoice"><i class="fa-solid fa-angle-right"></i> Invoice</button></li>
-          <li><button class="fl" data-toast="Privacy policy: we never share your data with third parties."><i class="fa-solid fa-angle-right"></i> Privacy Policy</button></li>
-        </ul>
-      </div>
-      <div class="f-col">
-        <h4>Contact Us</h4>
-        <ul class="f-contact">
-          <li><i class="fa-solid fa-location-dot"></i><div><b>Main Branch (BD)</b><span>Uttara Road-11, Sector-11, Dhaka-1230, Bangladesh</span></div></li>
-          <li><i class="fa-solid fa-globe"></i><div><b>International (VO)</b><span>Felipe Villanueva 107 60085, Mexico</span></div></li>
-          <li><i class="fa-solid fa-envelope"></i><div><b>Email</b><a class="mail" href="mailto:growfyagency@gmail.com">growfyagency@gmail.com</a></div></li>
-        </ul>
+      <p class="text-[12px] text-slate-400 leading-relaxed mt-4 max-w-[280px]">At Growfy Agency, we blend cutting-edge technology with strategic thinking to cultivate digital success for brands thriving online.</p>
+      <div class="flex gap-2 mt-5">
+        <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 grid place-items-center text-[13px] hover:bg-[#2EA3FF] hover:border-[#2EA3FF] transition"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 grid place-items-center text-[13px] hover:bg-[#2EA3FF] hover:border-[#2EA3FF] transition"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="TikTok" class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 grid place-items-center text-[13px] hover:bg-[#2EA3FF] hover:border-[#2EA3FF] transition"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#" aria-label="YouTube" class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 grid place-items-center text-[13px] hover:bg-[#2EA3FF] hover:border-[#2EA3FF] transition"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" aria-label="Spotify" class="w-9 h-9 rounded-lg bg-white/5 border border-white/10 grid place-items-center text-[13px] hover:bg-[#2EA3FF] hover:border-[#2EA3FF] transition"><i class="fa-brands fa-spotify"></i></a>
       </div>
     </div>
-    <div class="f-bottom">
-      <p>© 2026 Team Service. Built with passion for digital growth.</p>
-      <div class="pay">
-        <span>SECURE PAYMENTS</span>
-        <div class="pay-pill">
-          <i class="fa-brands fa-cc-visa" title="Visa"></i>
-          <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
-          <i class="fa-brands fa-cc-amex" title="Amex"></i>
-          <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
-          <i class="fa-brands fa-cc-stripe" title="Stripe"></i>
+
+    <div>
+      <h4 class="text-[11px] font-extrabold tracking-[.25em] text-slate-300">SERVICES</h4>
+      <ul class="mt-4 grid gap-2.5 text-[12.5px] text-slate-400">
+        <li><a href="#services" class="hover:text-[#2EA3FF] transition flex gap-2 items-center"><span class="text-[#2EA3FF] text-[10px]">▶</span> YouTube Marketing</a></li>
+        <li><a href="#services" class="hover:text-[#2EA3FF] transition flex gap-2 items-center"><span class="text-[#2EA3FF] text-[10px]">▶</span> Spotify Promotion</a></li>
+        <li><a href="#services" class="hover:text-[#2EA3FF] transition flex gap-2 items-center"><span class="text-[#2EA3FF] text-[10px]">▶</span> Graphic Design</a></li>
+        <li><a href="#services" class="hover:text-[#2EA3FF] transition flex gap-2 items-center"><span class="text-[#2EA3FF] text-[10px]">▶</span> Website Design</a></li>
+        <li><a href="#services" class="hover:text-[#2EA3FF] transition flex gap-2 items-center"><span class="text-[#2EA3FF] text-[10px]">▶</span> TikTok Strategy</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-[11px] font-extrabold tracking-[.25em] text-slate-300">COMPANY</h4>
+      <ul class="mt-4 grid gap-2.5 text-[12.5px] text-slate-400">
+        <li><a href="#about" class="hover:text-[#2EA3FF] transition">◉ About Us</a></li>
+        <li><a href="#comments" class="hover:text-[#2EA3FF] transition">◉ Our Blog</a></li>
+        <li><a href="#team" class="hover:text-[#2EA3FF] transition">◉ Career</a></li>
+        <li><button onclick="toggleChat(true)" class="hover:text-[#2EA3FF] transition">◉ Help &amp; Support</button></li>
+        <li><button onclick="openInvoice()" class="hover:text-[#2EA3FF] transition">◉ Invoice</button></li>
+        <li><a href="#" class="hover:text-[#2EA3FF] transition">◉ Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="text-[11px] font-extrabold tracking-[.25em] text-slate-300">CONTACT US</h4>
+      <div class="mt-4 grid gap-3 text-[12px] text-slate-400">
+        <div class="flex gap-2.5">
+          <i class="fa-solid fa-location-dot text-[#2EA3FF] mt-0.5"></i>
+          <span><b class="text-slate-200">MAIN BRANCH (BD)</b><br>Circular Road, Bos Bakshey More<br>Barisal Sadar 8200, Bangladesh</span>
+        </div>
+        <div class="flex gap-2.5">
+          <i class="fa-solid fa-location-dot text-[#2EA3FF] mt-0.5"></i>
+          <span><b class="text-slate-200">INTERNATIONAL (MX)</b><br>Felipe Villanueva 107 50080, Mexico</span>
+        </div>
+        <div class="flex gap-2.5 items-center">
+          <i class="fa-solid fa-envelope text-[#2EA3FF]"></i>
+          <a href="mailto:growfyagency@gmail.com" class="text-[#2EA3FF] font-semibold">growfyagency@gmail.com</a>
+        </div>
+        <div class="flex gap-2 mt-1">
+          <input id="newsEmail" placeholder="Newsletter email" class="flex-1 min-w-0 bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-[12px] placeholder:text-slate-500">
+          <button onclick="subscribe()" class="btn-primary rounded-lg px-4 text-[12px] font-bold">Join</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="border-t border-white/5">
+    <div class="max-w-[1280px] mx-auto px-5 lg:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-[11px] text-slate-500">© <span id="year">2026</span> Growfy Service. Built with passion for digital growth.</p>
+      <div class="flex items-center gap-3">
+        <span class="text-[10px] tracking-[.2em] font-bold text-slate-500">SECURE PAYMENTS</span>
+        <div class="flex gap-1.5 bg-white rounded-lg px-2.5 py-1.5 items-center text-[#0B1322] text-[14px]">
+          <i class="fa-brands fa-cc-visa"></i><i class="fa-brands fa-cc-mastercard"></i><i class="fa-brands fa-cc-paypal"></i><i class="fa-brands fa-cc-stripe"></i><i class="fa-brands fa-bitcoin"></i>
         </div>
       </div>
     </div>
   </div>
 </footer>
 
-<!-- ================= MODALS ================= -->
-<div class="modal-backdrop" id="modal-start" role="dialog" aria-modal="true" aria-labelledby="startTitle">
-  <div class="modal">
-    <button class="m-close" data-close-modal aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
-    <form id="startForm" novalidate>
-      <h3 id="startTitle">Get Started <span class="accent">Today</span></h3>
-      <p class="msub">Tell us about your project and we'll send a tailored growth roadmap within 48 hours.</p>
-      <div class="field" id="f-name"><label for="inName">Your Name</label><input id="inName" type="text" placeholder="e.g. Ayesha Rahman"><span class="err-msg">Please enter your name (min 2 characters).</span></div>
-      <div class="field" id="f-email"><label for="inEmail">Email Address</label><input id="inEmail" type="email" placeholder="you@company.com"><span class="err-msg">Please enter a valid email address.</span></div>
-      <div class="field" id="f-service"><label for="inService">Service Needed</label>
-        <select id="inService">
-          <option value="">Select a service…</option>
-          <option>Instagram Growth</option><option>YouTube Promotion</option><option>Facebook Ads</option>
-          <option>Spotify Promotion</option><option>TikTok Strategy</option><option>Apple Music Placement</option>
-          <option>Website Design</option><option>Graphic Design</option>
-        </select>
-        <span class="err-msg">Please choose a service.</span>
+<!-- ================= PORTFOLIO MODAL ================= -->
+<div id="portfolioModal" class="fixed inset-0 z-[80] hidden items-center justify-center p-4 modal-bg">
+  <div class="bg-[#0B1322] border border-white/10 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-6 relative">
+    <button onclick="closePortfolio()" aria-label="Close" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/10 grid place-items-center hover:bg-red-500 transition"><i class="fa-solid fa-xmark"></i></button>
+    <h3 class="font-grotesk font-bold text-[22px]">Portfolio <span class="grad-text">Showreel</span></h3>
+    <p class="text-[13px] text-slate-400 mt-1">869+ projects delivered — here's a taste.</p>
+    <div class="grid sm:grid-cols-2 gap-3 mt-5" id="modalPortfolio"></div>
+  </div>
+</div>
+
+<!-- ================= INVOICE MODAL ================= -->
+<div id="invoiceModal" class="fixed inset-0 z-[80] hidden items-center justify-center p-4 modal-bg">
+  <div class="bg-[#0B1322] border border-[#2EA3FF]/30 rounded-2xl max-w-md w-full p-6 relative shadow-[0_0_80px_rgba(46,163,255,.2)] max-h-[92vh] overflow-y-auto">
+    <button onclick="closeInvoice()" aria-label="Close" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/10 grid place-items-center hover:bg-red-500 transition"><i class="fa-solid fa-xmark"></i></button>
+    <div class="w-14 h-14 rounded-2xl bg-[#2EA3FF]/15 grid place-items-center text-[#2EA3FF] text-2xl"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+    <h3 class="font-grotesk font-bold text-[20px] mt-3">Invoice Tracking</h3>
+    <p class="text-[12px] text-slate-400">Enter your invoice / order ID to see live status. Try
+      <button onclick="document.getElementById('invInput').value='GF-86921';trackInvoice()" class="text-[#2EA3FF] font-bold underline">GF-86921</button>
+    </p>
+    <div class="flex gap-2 mt-4">
+      <input id="invInput" placeholder="e.g. GF-86921" class="flex-1 min-w-0 bg-black/40 border border-white/15 rounded-xl px-4 py-3 text-[13px] uppercase placeholder:normal-case">
+      <button onclick="trackInvoice()" class="btn-primary rounded-xl px-5 text-[13px] font-bold">Track</button>
+    </div>
+    <div id="invResult" class="mt-4 hidden"></div>
+  </div>
+</div>
+
+<!-- ================= VIDEO MODAL ================= -->
+<div id="videoModal" class="fixed inset-0 z-[80] hidden items-center justify-center p-4 modal-bg">
+  <div class="bg-black border border-white/10 rounded-2xl max-w-2xl w-full overflow-hidden relative">
+    <button onclick="document.getElementById('videoModal').style.display='none'" aria-label="Close" class="absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-white/15 grid place-items-center"><i class="fa-solid fa-xmark"></i></button>
+    <div class="aspect-video grid place-items-center bg-gradient-to-br from-[#0B1322] to-black text-center p-10">
+      <div>
+        <div class="w-20 h-20 mx-auto rounded-full btn-primary grid place-items-center text-2xl cursor-pointer" onclick="showToast('Showreel playing...')"><i class="fa-solid fa-play ml-1"></i></div>
+        <h4 class="font-bold mt-4">Growfy Agency Showreel 2026</h4>
+        <p class="text-[12px] text-slate-400 mt-1">2:45 • 4K • Our story, results &amp; culture</p>
       </div>
-      <div class="field"><label for="inMsg">Project Details (optional)</label><textarea id="inMsg" placeholder="Goals, timeline, budget…"></textarea></div>
-      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Submit Request <i class="fa-solid fa-paper-plane"></i></button>
-    </form>
-    <div class="m-success" id="startSuccess" hidden>
-      <i class="fa-solid fa-circle-check"></i>
-      <h4>Request Received!</h4>
-      <p>Thanks for reaching out — our strategy team will contact you within 48 hours.</p>
-      <button class="btn btn-ghost btn-sm" data-close-modal style="margin-top:18px">Done</button>
     </div>
   </div>
 </div>
 
-<div class="modal-backdrop" id="modal-invoice" role="dialog" aria-modal="true" aria-labelledby="invTitle">
-  <div class="modal">
-    <button class="m-close" data-close-modal aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
-    <h3 id="invTitle">Invoice <span class="accent">Tracking</span></h3>
-    <p class="msub">Enter your invoice ID (e.g. GRW-2026-0148) to see its live status.</p>
-    <form id="invForm" novalidate>
-      <div class="field" id="f-inv"><label for="inInv">Invoice ID</label><input id="inInv" type="text" placeholder="GRW-2026-0148"><span class="err-msg">Please enter your invoice ID.</span></div>
-      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center"><i class="fa-solid fa-magnifying-glass-location"></i> Track Invoice</button>
-    </form>
-    <div class="inv-result" id="invResult">
-      <div class="inv-head"><b id="invIdLabel">Invoice #—</b><span id="invStatusPill">—</span></div>
-      <ol class="steps" id="invSteps"></ol>
-      <p class="muted" style="font-size:11px" id="invEta"></p>
+<!-- ================= SUPPORT CHAT ================= -->
+<button id="chatFab" onclick="toggleChat()" aria-label="Open support chat" class="fixed bottom-5 right-5 z-[70] w-[56px] h-[56px] rounded-full btn-primary grid place-items-center text-xl">
+  <i class="fa-solid fa-headset"></i>
+  <span class="absolute -top-1 -right-1 w-5 h-5 bg-emerald-400 rounded-full border-[3px] border-[#060B14]"></span>
+</button>
+
+<div id="chatPanel" class="fixed bottom-[84px] right-5 z-[70] w-[330px] max-w-[calc(100vw-40px)] bg-[#0B1322] rounded-2xl overflow-hidden shadow-2xl hidden flex-col" style="border:1px solid rgba(255,255,255,.12)">
+  <div class="bg-gradient-to-r from-[#1E7CFF] to-[#38B6FF] p-4 flex items-center gap-3">
+    <div class="w-10 h-10 rounded-full bg-white grid place-items-center font-bold text-[#0B1322]">G</div>
+    <div class="flex-1">
+      <div class="font-bold text-[14px]">Growfy Support</div>
+      <div class="text-[11px] opacity-90 flex items-center gap-1.5"><span class="w-2 h-2 bg-emerald-300 rounded-full animate-pulse"></span> Online • replies instantly</div>
     </div>
+    <button onclick="toggleChat(false)" aria-label="Close chat" class="opacity-80 hover:opacity-100"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <div id="chatBody" class="h-[300px] overflow-y-auto p-4 grid gap-3 content-start bg-[#070D18]"></div>
+  <div class="p-3 border-t border-white/10 flex gap-2 bg-[#0B1322]">
+    <input id="chatInput" placeholder="Type a message..." class="flex-1 min-w-0 bg-black/40 border border-white/10 rounded-xl px-3.5 py-2.5 text-[13px] placeholder:text-slate-500" onkeydown="if(event.key==='Enter')sendChat()">
+    <button onclick="sendChat()" aria-label="Send" class="btn-primary w-10 h-10 rounded-xl grid place-items-center shrink-0"><i class="fa-solid fa-paper-plane text-[13px]"></i></button>
   </div>
 </div>
 
-<div class="toast" id="toast" role="status"><i class="fa-solid fa-circle-info"></i><span id="toastMsg"></span></div>
-<button class="to-top" id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+<!-- ================= TOAST + TO TOP ================= -->
+<div id="toastWrap" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-[90] grid gap-2 w-[92%] max-w-[420px]"></div>
+
+<button id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" class="fixed bottom-5 left-5 z-[70] w-11 h-11 rounded-full glass grid place-items-center opacity-0 pointer-events-none transition-all">
+  <i class="fa-solid fa-arrow-up text-[#2EA3FF]"></i>
+</button>
 
 <script>
-(function(){
-  "use strict";
-  const $  = (s,c)=> (c||document).querySelector(s);
-  const $$ = (s,c)=> Array.prototype.slice.call((c||document).querySelectorAll(s));
+/* =========================================================
+   GROWFY AGENCY — APP SCRIPT (vanilla JS, no dependencies)
+   ========================================================= */
 
-  /* ---------- Header scroll + back to top ---------- */
-  const header = $('#header'), toTop = $('#toTop');
-  function onScroll(){
-    header.classList.toggle('scrolled', window.scrollY > 30);
-    toTop.classList.toggle('show', window.scrollY > 600);
-    spy();
-  }
-  window.addEventListener('scroll', onScroll, {passive:true});
-  toTop.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+/* ---------------- DATA ---------------- */
+const services = [
+  {icon:'fa-brands fa-instagram', color:'#E1306C', bg:'rgba(225,48,108,.14)', title:'Instagram', desc:'Grow your followers and engagement with our premium organic strategies.', price:49, tag:'Most Popular'},
+  {icon:'fa-brands fa-youtube', color:'#FF0000', bg:'rgba(255,0,0,.12)', title:'YouTube Service', desc:'Increase views, watch time and subscribers for your channel monetization.', price:79, tag:'High ROI'},
+  {icon:'fa-brands fa-facebook-f', color:'#1877F2', bg:'rgba(24,119,242,.14)', title:'Facebook Service', desc:'Professional page growth and ad campaign management for your brand.', price:59, tag:'Verified'},
+  {icon:'fa-brands fa-spotify', color:'#1DB954', bg:'rgba(29,185,84,.13)', title:'Spotify Service', desc:'Boost your streams and monthly listeners with targeted music promotion.', price:39, tag:'For Artists'},
+  {icon:'fa-brands fa-tiktok', color:'#ffffff', bg:'rgba(255,255,255,.1)', title:'TikTok Service', desc:'Go viral with our specialized TikTok algorithm growth packages.', price:45, tag:'Viral'},
+  {icon:'fa-brands fa-apple', color:'#ffffff', bg:'rgba(255,255,255,.08)', title:'Apple Music', desc:'Premium placement and stream boosting for high-tier music artists.', price:69, tag:'Premium'}
+];
 
-  /* ---------- Mobile nav ---------- */
-  const navToggle = $('#navToggle');
-  navToggle.addEventListener('click', ()=>{
-    const open = header.classList.toggle('menu-open');
-    navToggle.setAttribute('aria-expanded', open);
-    navToggle.innerHTML = open ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
-  });
-  function closeMenu(){
-    header.classList.remove('menu-open');
-    navToggle.setAttribute('aria-expanded','false');
-    navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+const portfolioItems = [
+  {cat:'web', title:'Luxe E-commerce Website', meta:'Web Design • 4.2x Sales', img:'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?q=80&w=600&auto=format&fit=crop'},
+  {cat:'marketing', title:'Viral YouTube Campaign', meta:'Marketing • 12M Views', img:'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=600&auto=format&fit=crop'},
+  {cat:'brand', title:'Nova Brand Identity', meta:'Branding • Full Kit', img:'https://images.unsplash.com/photo-1634942537034-2531766767d1?q=80&w=600&auto=format&fit=crop'},
+  {cat:'web', title:'SaaS Dashboard UI', meta:'Web Design • UI/UX', img:'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop'},
+  {cat:'marketing', title:'Spotify Artist Breakout', meta:'Marketing • 850k Streams', img:'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=600&auto=format&fit=crop'},
+  {cat:'brand', title:'Fashion Label Rebrand', meta:'Branding • Logo + Pack', img:'https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=600&auto=format&fit=crop'}
+];
+
+const team = [
+  {name:'Kevin Wiles', role:'MUSIC PRODUCER', desc:'Scaling international music distribution through strategic digital presence and modern branding.', img:'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300&auto=format&fit=crop', icons:['fa-brands fa-facebook-f','fa-brands fa-instagram','fa-brands fa-youtube']},
+  {name:'Johnny Lightning', role:'ROCK ARTIST', desc:'Implementing automated song-selling systems and premium e-commerce solutions for artists.', img:'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=300&auto=format&fit=crop', icons:['fa-brands fa-spotify','fa-brands fa-tiktok','fa-solid fa-envelope']},
+  {name:'Amir Hossain', role:'TECH ENTREPRENEUR', desc:'Transforming digital ecosystems with high-conversion UI/UX and advanced Laravel architectures.', img:'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=300&auto=format&fit=crop', icons:['fa-brands fa-linkedin-in','fa-brands fa-x-twitter','fa-solid fa-globe']},
+  {name:'Sarah Jenkins', role:'DIGITAL CREATOR', desc:'Optimizing social media growth with targeted content strategies and data-driven marketing.', img:'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=300&auto=format&fit=crop', icons:['fa-brands fa-instagram','fa-brands fa-tiktok','fa-brands fa-youtube']},
+  {name:'Marcus Reed', role:'CEO, KMD BAZAR', desc:'Revolutionizing the e-commerce shopping experience with premium WooCommerce optimization.', img:'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=300&auto=format&fit=crop', icons:['fa-brands fa-facebook-f','fa-brands fa-linkedin-in','fa-solid fa-globe']}
+];
+
+let testimonials = [
+  {name:'Daniel Carter', role:'YouTuber • 890k Subs', text:"Growfy took my channel from 20k to 890k in 8 months. Watch time exploded and I got monetized twice as fast as expected. Best investment ever.", img:'https://i.pravatar.cc/100?img=13', stars:5},
+  {name:'Priya Sharma', role:'Spotify Artist', text:"My monthly listeners went from 3k to 120k. Real playlists, real fans. The dashboard and invoice tracking made everything transparent.", img:'https://i.pravatar.cc/100?img=47', stars:5},
+  {name:'James Wilson', role:'E-commerce Founder', text:"Our store conversion jumped 4.2x after their website redesign + TikTok ads. Support replies in minutes, even at midnight. Highly recommended.", img:'https://i.pravatar.cc/100?img=59', stars:5}
+];
+
+const faqs = [
+  {q:'What services does Growfy Agency offer?', a:'We provide comprehensive digital solutions including Social Media Marketing, SEO optimization, Web Development, Graphic Design, and Paid Ad management (PPC) tailored to scale your brand.'},
+  {q:'How long does it take to see results?', a:'Most clients see initial traction in 7–14 days. Viral growth typically compounds in 30–90 days depending on budget, niche and consistency. You get weekly reports.'},
+  {q:'Do you provide customized packages?', a:'Absolutely. Use the cart on our services section to combine Instagram, YouTube, Spotify, TikTok and Web packages — we generate an instant custom invoice for you.'},
+  {q:'Which platforms do you specialize in?', a:'Instagram, YouTube, Facebook, TikTok, Spotify and Apple Music — plus full-stack web design (WordPress, Laravel, WooCommerce, Shopify) and branding.'},
+  {q:'How do I get started?', a:'Click Get Started, pick a service, checkout to get your invoice ID (e.g. GF-86921), then track live progress from the Invoice Tracking button. Or chat with support for a free audit.'}
+];
+
+/* ---------------- SERVICES RENDER ---------------- */
+let cart = [];
+const serviceGrid = document.getElementById('serviceGrid');
+
+serviceGrid.innerHTML = services.map((s, i) => `
+  <div class="glass rounded-2xl p-7 text-center card-hover reveal relative overflow-hidden">
+    ${s.tag ? '<span class="absolute top-3 right-3 text-[9px] font-extrabold tracking-wider bg-[#2EA3FF]/15 text-[#6CC5FF] border border-[#2EA3FF]/30 rounded-full px-2.5 py-1">' + s.tag.toUpperCase() + '</span>' : ''}
+    <div class="w-14 h-14 mx-auto rounded-2xl grid place-items-center text-[26px]" style="background:${s.bg};color:${s.color}">
+      <i class="${s.icon}"></i>
+    </div>
+    <h3 class="font-bold text-[15px] mt-4">${s.title}</h3>
+    <p class="text-[12px] text-slate-400 leading-relaxed mt-2 min-h-[48px]">${s.desc}</p>
+    <div class="font-grotesk font-bold text-[18px] mt-2">From $${s.price}<span class="text-[11px] text-slate-500 font-semibold"> /package</span></div>
+    <div class="flex gap-2 mt-4">
+      <button onclick="addToCart(${i})" class="flex-1 btn-primary rounded-lg py-2.5 text-[12px] font-bold"><i class="fa-solid fa-plus mr-1"></i> Order</button>
+      <button onclick="quickView(${i})" aria-label="Quick view" class="w-11 rounded-lg btn-ghost grid place-items-center"><i class="fa-solid fa-eye text-[13px]"></i></button>
+    </div>
+  </div>
+`).join('');
+
+function addToCart(i){
+  cart.push(services[i]);
+  document.getElementById('cartCount').textContent = cart.length + ' items';
+  showToast('✅ ' + services[i].title + ' added — $' + services[i].price + ' (Cart: ' + cart.length + ')');
+}
+
+function quickView(i){
+  const s = services[i];
+  showToast('👁 ' + s.title + ': ' + s.desc + ' Starting $' + s.price);
+  document.getElementById('services').scrollIntoView({behavior:'smooth'});
+}
+
+function checkout(){
+  if(!cart.length){ showToast('🛒 Your cart is empty — add a service first'); return; }
+  const total = cart.reduce((a, b) => a + b.price, 0);
+  const id = 'GF-' + Math.floor(10000 + Math.random() * 89999);
+  showToast('🎉 Order placed! Invoice ' + id + ' • Total $' + total + '. Track it via Invoice Tracking.');
+  cart = [];
+  document.getElementById('cartCount').textContent = '0 items';
+  openInvoice(id);
+}
+
+/* ---------------- PORTFOLIO ---------------- */
+function renderPortfolio(filter){
+  filter = filter || 'all';
+  const grid = document.getElementById('portfolioGrid');
+  const list = portfolioItems.filter(p => filter === 'all' || p.cat === filter);
+
+  if(!list.length){
+    grid.innerHTML = '<div class="col-span-full text-center text-slate-400 text-[13px] py-8">No projects in this category yet.</div>';
+    return;
   }
 
-  /* ---------- Dropdowns (services + badge) ---------- */
-  const svcDrop = $('#svcDrop'), badgeWrap = $('#badgeWrap');
-  function closeDrops(){
-    svcDrop.classList.remove('open');
-    $('.dd-toggle', svcDrop).setAttribute('aria-expanded','false');
-    badgeWrap.classList.remove('open');
-    $('#badgeBtn').setAttribute('aria-expanded','false');
-  }
-  $('.dd-toggle', svcDrop).addEventListener('click', function(e){
-    if(window.innerWidth <= 1080){ e.preventDefault(); }
-    e.stopPropagation();
-    const open = svcDrop.classList.toggle('open');
-    this.setAttribute('aria-expanded', open);
-    badgeWrap.classList.remove('open');
-  });
-  $('#badgeBtn').addEventListener('click', function(e){
-    e.stopPropagation();
-    const open = badgeWrap.classList.toggle('open');
-    this.setAttribute('aria-expanded', open);
-    svcDrop.classList.remove('open');
-  });
-  $$('.badge-menu button').forEach(b=>{
-    b.addEventListener('click', ()=>{
-      $('#badgeText').textContent = b.dataset.badge;
-      closeDrops();
-      toast('Goal set: ' + b.dataset.badge, 'fa-bullseye');
+  grid.innerHTML = list.map(p => `
+    <div class="portfolio-card glass rounded-2xl overflow-hidden card-hover reveal visible">
+      <div class="h-[190px] overflow-hidden relative">
+        <img src="${p.img}" class="w-full h-full object-cover" alt="${p.title}" loading="lazy">
+        <span class="absolute top-3 left-3 text-[10px] font-extrabold bg-black/60 backdrop-blur border border-white/20 rounded-full px-3 py-1 uppercase tracking-wider">${p.cat}</span>
+      </div>
+      <div class="p-5 flex items-center justify-between gap-3">
+        <div>
+          <div class="font-bold text-[14px]">${p.title}</div>
+          <div class="text-[11px] text-[#2EA3FF] font-semibold mt-0.5">${p.meta}</div>
+        </div>
+        <button onclick="openPortfolio()" aria-label="Open portfolio" class="w-10 h-10 rounded-full btn-ghost grid place-items-center shrink-0"><i class="fa-solid fa-arrow-up-right"></i></button>
+      </div>
+    </div>
+  `).join('');
+}
+renderPortfolio('all');
+
+document.querySelectorAll('.fbtn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.fbtn').forEach(x => {
+      x.classList.remove('btn-primary');
+      x.classList.add('btn-ghost');
     });
+    btn.classList.remove('btn-ghost');
+    btn.classList.add('btn-primary');
+    renderPortfolio(btn.dataset.filter);
   });
-  document.addEventListener('click', e=>{
-    if(!svcDrop.contains(e.target) && !badgeWrap.contains(e.target)) closeDrops();
-  });
+});
 
-  /* ---------- Toast ---------- */
-  let toastTimer;
-  function toast(msg, icon){
-    const t = $('#toast');
-    $('#toastMsg').textContent = msg;
-    $('i', t).className = 'fa-solid ' + (icon || 'fa-circle-info');
-    t.classList.add('show');
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(()=> t.classList.remove('show'), 3200);
+document.getElementById('modalPortfolio').innerHTML = portfolioItems.map(p => `
+  <div class="rounded-xl overflow-hidden border border-white/10">
+    <img src="${p.img}" class="h-[160px] w-full object-cover" alt="${p.title}" loading="lazy">
+    <div class="p-3 bg-black/30">
+      <div class="font-bold text-[13px]">${p.title}</div>
+      <div class="text-[11px] text-slate-400">${p.meta}</div>
+    </div>
+  </div>
+`).join('');
+
+function openPortfolio(){
+  const m = document.getElementById('portfolioModal');
+  m.classList.remove('hidden');
+  m.classList.add('flex');
+}
+function closePortfolio(){
+  const m = document.getElementById('portfolioModal');
+  m.classList.add('hidden');
+  m.classList.remove('flex');
+}
+
+/* ---------------- TEAM ---------------- */
+document.getElementById('teamRow').innerHTML = team.map(t => `
+  <div class="glass rounded-2xl p-6 text-center card-hover reveal visible snap-center min-w-[240px] lg:min-w-0">
+    <img src="${t.img}" class="w-[72px] h-[72px] rounded-2xl object-cover mx-auto border border-white/15 shadow-lg" alt="${t.name}" loading="lazy">
+    <h4 class="font-bold text-[14px] mt-3">${t.name}</h4>
+    <p class="text-[9px] font-extrabold tracking-[.2em] text-[#2EA3FF] mt-0.5">${t.role}</p>
+    <p class="text-[11px] text-slate-400 leading-relaxed mt-3 min-h-[66px]">${t.desc}</p>
+    <div class="flex justify-center gap-2 mt-4">
+      ${t.icons.map(ic => `
+        <a href="#" onclick="event.preventDefault();showToast('Opening ${t.name} profile...')" aria-label="Social profile" class="w-8 h-8 rounded-lg bg-black/40 border border-white/10 grid place-items-center text-[12px] hover:bg-[#2EA3FF] hover:border-[#2EA3FF] transition"><i class="${ic}"></i></a>
+      `).join('')}
+    </div>
+  </div>
+`).join('');
+
+function scrollTeam(dir){
+  document.getElementById('teamRow').scrollBy({left: dir * 280, behavior:'smooth'});
+}
+
+/* ---------------- TESTIMONIALS ---------------- */
+let tIdx = 0;
+let testiTimer = null;
+
+function renderTesti(){
+  const tr = document.getElementById('testiTrack');
+  tr.innerHTML = testimonials.map(t => `
+    <div class="min-w-full px-1">
+      <div class="bg-black/25 border border-white/10 rounded-2xl p-6 md:p-8 text-center">
+        <div class="flex justify-center text-amber-400 text-[13px] gap-1">${'<i class="fa-solid fa-star"></i>'.repeat(t.stars)}</div>
+        <p class="text-[14px] md:text-[15px] leading-relaxed mt-4 text-slate-200 italic">"${t.text}"</p>
+        <div class="flex items-center justify-center gap-3 mt-5">
+          <img src="${t.img}" class="w-11 h-11 rounded-full border-2 border-[#2EA3FF]" alt="${t.name}" loading="lazy">
+          <div class="text-left">
+            <div class="font-bold text-[13px]">${t.name}</div>
+            <div class="text-[11px] text-slate-400">${t.role}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
+  document.getElementById('testiDots').innerHTML = testimonials.map((_, i) => `
+    <button onclick="goTesti(${i})" aria-label="Go to review ${i + 1}" class="h-2 rounded-full transition-all ${i === tIdx ? 'w-7 bg-[#2EA3FF]' : 'w-2 bg-white/20'}"></button>
+  `).join('');
+
+  tr.style.transform = 'translateX(-' + (tIdx * 100) + '%)';
+}
+
+function moveTesti(d){
+  tIdx = (tIdx + d + testimonials.length) % testimonials.length;
+  renderTesti();
+  restartTestiTimer();
+}
+function goTesti(i){
+  tIdx = i;
+  renderTesti();
+  restartTestiTimer();
+}
+function restartTestiTimer(){
+  clearInterval(testiTimer);
+  testiTimer = setInterval(() => moveTesti(1), 6000);
+}
+renderTesti();
+restartTestiTimer();
+
+function addReview(){
+  const n = document.getElementById('revName').value.trim() || 'Guest User';
+  const t = document.getElementById('revText').value.trim();
+  if(!t){ showToast('⚠️ Please write your comment first'); return; }
+  testimonials.push({name:n, role:'Verified Client', text:t, img:'https://i.pravatar.cc/100?u=' + Date.now(), stars:5});
+  document.getElementById('revName').value = '';
+  document.getElementById('revText').value = '';
+  tIdx = testimonials.length - 1;
+  renderTesti();
+  restartTestiTimer();
+  showToast('💙 Thanks! Your comment is now live.');
+}
+
+/* ---------------- FAQ ---------------- */
+document.getElementById('faqList').innerHTML = faqs.map((f, i) => `
+  <div class="faq-item ${i === 0 ? 'open' : ''} glass rounded-xl overflow-hidden reveal visible">
+    <button onclick="toggleFaq(${i})" class="w-full flex items-center justify-between gap-4 text-left px-5 py-4">
+      <span class="font-semibold text-[13.5px]">${f.q}</span>
+      <span class="faq-arrow w-8 h-8 rounded-full border border-white/20 grid place-items-center text-[12px] shrink-0"><i class="fa-solid fa-chevron-down"></i></span>
+    </button>
+    <div class="faq-body px-5">
+      <p class="pb-5 text-[12.5px] text-slate-300/85 leading-relaxed border-t border-white/10 pt-4">${f.a}</p>
+    </div>
+  </div>
+`).join('');
+
+function toggleFaq(i){
+  const items = document.querySelectorAll('.faq-item');
+  const wasOpen = items[i].classList.contains('open');
+  items.forEach(x => x.classList.remove('open'));
+  if(!wasOpen) items[i].classList.add('open');
+}
+
+/* ---------------- INVOICE ---------------- */
+const fakeDB = {
+  'GF-86921': {service:'YouTube Monetization Package', amount:79, status:'In Progress', progress:68, eta:'2 days left'},
+  'GF-10234': {service:'Instagram Growth + Spotify', amount:88, status:'Completed', progress:100, eta:'Delivered'}
+};
+
+function openInvoice(prefill){
+  const m = document.getElementById('invoiceModal');
+  m.classList.remove('hidden');
+  m.classList.add('flex');
+  if(prefill) document.getElementById('invInput').value = prefill;
+}
+function closeInvoice(){
+  const m = document.getElementById('invoiceModal');
+  m.classList.add('hidden');
+  m.classList.remove('flex');
+}
+
+function trackInvoice(){
+  const id = document.getElementById('invInput').value.trim().toUpperCase();
+  const box = document.getElementById('invResult');
+  box.classList.remove('hidden');
+
+  if(!id){
+    box.innerHTML = '<div class="text-[12px] text-red-400 font-semibold">Please enter an invoice ID.</div>';
+    return;
   }
 
-  /* ---------- Flash highlight ---------- */
-  function flash(sel){
-    const el = $(sel);
-    if(!el) return;
-    el.classList.remove('flash');
-    void el.offsetWidth;
-    el.classList.add('flash');
-    setTimeout(()=> el.classList.remove('flash'), 1700);
+  let d = fakeDB[id];
+  if(!d){
+    const h = id.split('').reduce((a, c) => a + c.charCodeAt(0), 0);
+    d = {
+      service: ['Instagram Growth','YouTube Views','TikTok Viral','Website Design'][h % 4],
+      amount: 39 + (h % 60),
+      status: ['Processing','In Progress','Quality Check'][h % 3],
+      progress: 20 + (h % 75),
+      eta: (1 + h % 5) + ' days left'
+    };
   }
 
-  /* ---------- Global click delegation ---------- */
-  document.addEventListener('click', function(e){
-    const el = e.target.closest('[data-open-modal],[data-toast],[data-flash]');
-    if(!el) return;
-    if(el.dataset.openModal){
-      e.preventDefault();
-      openModal(el.dataset.openModal, el.dataset.service);
-      closeMenu(); closeDrops();
-      return;
+  const col = d.progress === 100 ? '#10B981' : '#2EA3FF';
+  const steps = [
+    ['Order received', true],
+    ['Payment confirmed', true],
+    ['Work in progress', d.progress > 30],
+    [d.progress === 100 ? 'Delivered ✓' : 'Delivery & report', d.progress === 100]
+  ];
+
+  box.innerHTML = `
+    <div class="bg-black/30 border border-white/10 rounded-xl p-4 chat-msg">
+      <div class="flex justify-between items-center gap-2">
+        <span class="font-extrabold text-[14px]">${id}</span>
+        <span class="text-[10px] font-extrabold px-2.5 py-1 rounded-full whitespace-nowrap" style="background:${col}22;color:${col};border:1px solid ${col}55">${d.status.toUpperCase()}</span>
+      </div>
+      <div class="text-[12px] text-slate-300 mt-2">📦 ${d.service} • <b>$${d.amount}</b> • ⏳ ${d.eta}</div>
+      <div class="h-2 bg-white/10 rounded-full mt-3 overflow-hidden">
+        <div class="h-full rounded-full" style="width:${d.progress}%;background:linear-gradient(90deg,#2EA3FF,#7CFCFF)"></div>
+      </div>
+      <div class="mt-4">
+        ${steps.map(s => `
+          <div class="flex gap-3 relative timeline-dot pb-4">
+            <span class="w-6 h-6 rounded-full grid place-items-center text-[10px] shrink-0 ${s[1] ? 'bg-[#2EA3FF] text-white' : 'bg-white/10 text-slate-500'}"><i class="fa-solid ${s[1] ? 'fa-check' : 'fa-clock'}"></i></span>
+            <span class="text-[12px] font-semibold ${s[1] ? 'text-white' : 'text-slate-500'}">${s[0]}</span>
+          </div>
+        `).join('')}
+      </div>
+    </div>`;
+}
+
+/* ---------------- CHAT ---------------- */
+let chatOpened = false;
+
+function toggleChat(force){
+  const p = document.getElementById('chatPanel');
+  const show = force !== undefined ? force : p.classList.contains('hidden');
+  if(show){
+    p.classList.remove('hidden');
+    p.classList.add('flex');
+    if(!chatOpened){
+      chatOpened = true;
+      botSay("👋 Hi! I'm <b>Rafi</b> from Growfy. Want a free growth audit, pricing, or to track an order?");
+      setTimeout(() => botSay('Try typing: <b>price</b> • <b>track GF-86921</b> • <b>human</b>'), 900);
     }
-    if(el.dataset.toast){
-      e.preventDefault();
-      toast(el.dataset.toast, 'fa-circle-info');
-      closeMenu();
-      return;
-    }
-    if(el.dataset.flash){
-      closeMenu(); closeDrops();
-      const target = el.dataset.flash;
-      setTimeout(()=> flash(target), 550);
-    }
+  } else {
+    p.classList.add('hidden');
+    p.classList.remove('flex');
+  }
+}
+
+function bubble(html, me){
+  const b = document.getElementById('chatBody');
+  b.insertAdjacentHTML('beforeend', me
+    ? '<div class="chat-msg ml-auto max-w-[85%] bg-gradient-to-br from-[#2EA3FF] to-[#1E6FFF] text-white text-[12.5px] rounded-2xl rounded-br-md px-3.5 py-2.5 leading-relaxed">' + html + '</div>'
+    : '<div class="chat-msg max-w-[88%] bg-white/[.07] border border-white/10 text-[12.5px] rounded-2xl rounded-bl-md px-3.5 py-2.5 leading-relaxed">' + html + '</div>');
+  b.scrollTop = b.scrollHeight;
+}
+
+function botSay(t){ setTimeout(() => bubble(t, false), 450); }
+
+function sendChat(){
+  const inp = document.getElementById('chatInput');
+  const v = inp.value.trim();
+  if(!v) return;
+  bubble(v, true);
+  inp.value = '';
+  const l = v.toLowerCase();
+
+  if(l.includes('price') || l.includes('cost') || l.includes('package')){
+    botSay('💰 <b>Starting prices:</b><br>• Instagram $49<br>• YouTube $79<br>• TikTok $45<br>• Spotify $39<br>• Website from $199<br><br>Want a custom bundle? Scroll to Services and hit <b>Checkout</b>.');
+  } else if(l.includes('track') || l.includes('gf-') || l.includes('invoice')){
+    botSay('🧾 Opening invoice tracker for you...');
+    setTimeout(openInvoice, 900);
+  } else if(l.includes('human') || l.includes('agent') || l.includes('call')){
+    botSay('📞 Connecting you... An expert will call within 15 mins. Meanwhile drop your WhatsApp number here.');
+  } else if(l.includes('hi') || l.includes('hello') || l.includes('salam') || l.includes('assalam')){
+    botSay('Walaikum Assalam! 💙 How can Growfy scale you today? (Services / Portfolio / Pricing?)');
+  } else if(l.includes('portfolio') || l.includes('work') || l.includes('result')){
+    botSay('🎬 Opening our best work...');
+    setTimeout(openPortfolio, 700);
+  } else if(l.includes('thank')){
+    botSay('Anytime! 🙏 Your growth is our mission. Need anything else?');
+  } else {
+    botSay('Got it! ✅ A specialist is reviewing that. Meanwhile — want a <b>FREE $299 audit</b>? Drop your email or type <b>price</b>.');
+  }
+}
+
+/* ---------------- MISC ACTIONS ---------------- */
+function playVideo(){
+  document.getElementById('videoModal').style.display = 'flex';
+}
+
+function claimOffer(){
+  const e = document.getElementById('ctaEmail').value.trim();
+  if(!e || e.indexOf('@') === -1){ showToast('⚠️ Enter a valid email to claim audit'); return; }
+  document.getElementById('ctaEmail').value = '';
+  showToast('🎉 Audit claimed! Check your inbox within 2 hours.');
+}
+
+function subscribe(){
+  const e = document.getElementById('newsEmail').value.trim();
+  if(!e || e.indexOf('@') === -1){ showToast('⚠️ Enter a valid email'); return; }
+  document.getElementById('newsEmail').value = '';
+  showToast('💌 Subscribed! Welcome to Growfy insiders.');
+}
+
+function showToast(msg){
+  const w = document.getElementById('toastWrap');
+  const el = document.createElement('div');
+  el.className = 'chat-msg bg-[#0E1A2F]/95 border border-[#2EA3FF]/40 rounded-xl px-4 py-3 text-[12.5px] font-semibold shadow-[0_10px_40px_rgba(0,0,0,.6)] backdrop-blur flex items-center gap-2';
+  el.innerHTML = '<span class="w-2 h-2 rounded-full bg-[#2EA3FF] shrink-0 animate-pulse"></span><span>' + msg + '</span>';
+  w.appendChild(el);
+  setTimeout(() => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(8px)';
+    setTimeout(() => el.remove(), 400);
+  }, 3400);
+}
+
+/* ---------------- NAV / SCROLL ---------------- */
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+
+menuBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('hidden');
+  menuBtn.innerHTML = mobileMenu.classList.contains('hidden')
+    ? '<i class="fa-solid fa-bars"></i>'
+    : '<i class="fa-solid fa-xmark"></i>';
+});
+
+document.querySelectorAll('.mob-link').forEach(a => {
+  a.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+    menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
   });
+});
 
-  /* close mobile menu on any nav link click */
-  $$('nav.main a.nl, nav.main .drop a').forEach(a=> a.addEventListener('click', ()=>{ closeMenu(); closeDrops(); }));
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  const docH = document.body.scrollHeight - window.innerHeight;
+  document.getElementById('progressBar').style.width = (docH > 0 ? (y / docH) * 100 : 0) + '%';
+  document.getElementById('header').style.boxShadow = y > 20 ? '0 10px 40px rgba(0,0,0,.5)' : 'none';
 
-  /* ---------- Scroll spy ---------- */
-  const spyMap = {};
-  $$('[data-spy]').forEach(a=>{ spyMap[a.dataset.spy] = a; });
-  const spyOrder = ['home','about','services','partnerships','faq','contact'];
-  function spy(){
-    const pos = window.scrollY + 160;
-    let current = 'home';
-    spyOrder.forEach(id=>{
-      const sec = document.getElementById(id);
-      if(sec && sec.offsetTop <= pos) current = id;
-    });
-    if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 40) current = 'contact';
-    Object.keys(spyMap).forEach(k=> spyMap[k].classList.toggle('active', k === current));
+  const tt = document.getElementById('toTop');
+  if(y > 600){
+    tt.style.opacity = '1';
+    tt.style.pointerEvents = 'auto';
+  } else {
+    tt.style.opacity = '0';
+    tt.style.pointerEvents = 'none';
   }
 
-  /* ---------- Counters ---------- */
-  const counted = new WeakSet();
-  const cObs = new IntersectionObserver(entries=>{
-    entries.forEach(en=>{
-      if(!en.isIntersecting || counted.has(en.target)) return;
-      counted.add(en.target);
-      const el = en.target, target = parseInt(el.dataset.count,10), dur = 1400, t0 = performance.now();
-      (function tick(t){
-        const p = Math.min((t - t0)/dur, 1);
-        el.textContent = Math.round(target * (1 - Math.pow(1-p,3)));
-        if(p < 1) requestAnimationFrame(tick);
-      })(t0);
-    });
-  },{threshold:.5});
-  $$('.count').forEach(el=> cObs.observe(el));
-
-  /* ---------- Reveal on scroll ---------- */
-  const rObs = new IntersectionObserver(entries=>{
-    entries.forEach(en=>{
-      if(en.isIntersecting){ en.target.classList.add('in'); rObs.unobserve(en.target); }
-    });
-  },{threshold:.14});
-  $$('.reveal').forEach(el=>{
-    el.style.transitionDelay = (el.dataset.d || 0) + 'ms';
-    rObs.observe(el);
-  });
-
-  /* ---------- FAQ accordion ---------- */
-  $$('#acc .acc-item').forEach(item=>{
-    const btn = $('.acc-btn', item), body = $('.acc-body', item);
-    if(item.classList.contains('open')) body.style.maxHeight = body.scrollHeight + 'px';
-    btn.addEventListener('click', ()=>{
-      const isOpen = item.classList.contains('open');
-      $$('#acc .acc-item').forEach(o=>{
-        o.classList.remove('open');
-        $('.acc-body', o).style.maxHeight = 0;
-        $('.acc-btn', o).setAttribute('aria-expanded','false');
-      });
-      if(!isOpen){
-        item.classList.add('open');
-        body.style.maxHeight = body.scrollHeight + 'px';
-        btn.setAttribute('aria-expanded','true');
-      }
-    });
-  });
-
-  /* ---------- Modals ---------- */
-  function openModal(name, service){
-    const m = $('#modal-' + name);
-    if(!m) return;
-    m.classList.add('show');
-    document.body.style.overflow = 'hidden';
-    if(name === 'start'){
-      $('#startForm').hidden = false;
-      $('#startSuccess').hidden = true;
-      if(service) $('#inService').value = service;
-      setTimeout(()=> $('#inName').focus(), 60);
+  ['home','portfolio','services','team','comments','about'].forEach(id => {
+    const s = document.getElementById(id);
+    if(!s) return;
+    const r = s.getBoundingClientRect();
+    if(r.top < 220 && r.bottom > 220){
+      document.querySelectorAll('.nav-link').forEach(n => n.classList.remove('active'));
+      const link = document.querySelector('[data-nav="' + id + '"]');
+      if(link) link.classList.add('active');
     }
-    if(name === 'invoice') setTimeout(()=> $('#inInv').focus(), 60);
+  });
+}, {passive:true});
+
+/* ---------------- REVEAL + COUNTERS ---------------- */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, {threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+const cio = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(!e.isIntersecting) return;
+    const el = e.target;
+    cio.unobserve(el);
+    const t = parseInt(el.dataset.target, 10);
+    let c = 0;
+    const step = Math.max(1, Math.ceil(t / 60));
+    const iv = setInterval(() => {
+      c += step;
+      if(c >= t){ c = t; clearInterval(iv); }
+      el.textContent = c;
+    }, 28);
+  });
+}, {threshold:.6});
+document.querySelectorAll('.counter').forEach(el => cio.observe(el));
+
+setTimeout(() => {
+  document.getElementById('heroBar1').style.width = '95%';
+  document.getElementById('heroBar2').style.width = '78%';
+}, 600);
+
+/* ---------------- MODALS: BACKDROP + ESC ---------------- */
+[['portfolioModal', closePortfolio], ['invoiceModal', closeInvoice], ['videoModal', () => {
+  document.getElementById('videoModal').style.display = 'none';
+}]].forEach(pair => {
+  const el = document.getElementById(pair[0]);
+  el.addEventListener('click', e => {
+    if(e.target === el){
+      if(pair[0] === 'videoModal'){ el.style.display = 'none'; }
+      else { pair[1](); }
+    }
+  });
+});
+
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape'){
+    closePortfolio();
+    closeInvoice();
+    document.getElementById('videoModal').style.display = 'none';
   }
-  function closeModal(m){
-    m.classList.remove('show');
-    document.body.style.overflow = '';
-  }
-  $$('.modal-backdrop').forEach(bd=>{
-    bd.addEventListener('click', e=>{ if(e.target === bd) closeModal(bd); });
-    $$('[data-close-modal]', bd).forEach(b=> b.addEventListener('click', ()=> closeModal(bd)));
-  });
-  document.addEventListener('keydown', e=>{
-    if(e.key === 'Escape'){ $$('.modal-backdrop.show').forEach(closeModal); closeDrops(); closeMenu(); }
-  });
+});
 
-  /* ---------- Get Started form ---------- */
-  $('#startForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    let ok = true;
-    const name = $('#inName').value.trim();
-    const email = $('#inEmail').value.trim();
-    const svc = $('#inService').value;
-    $('#f-name').classList.toggle('err', !(ok = name.length >= 2 && ok, name.length >= 2));
-    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
-    $('#f-email').classList.toggle('err', !emailOk);
-    $('#f-service').classList.toggle('err', !svc);
-    ok = name.length >= 2 && emailOk && !!svc;
-    if(!ok){ toast('Please fix the highlighted fields.', 'fa-triangle-exclamation'); return; }
-    this.hidden = true;
-    $('#startSuccess').hidden = false;
-    toast('Thanks ' + name.split(' ')[0] + '! Your ' + svc + ' request is in.', 'fa-circle-check');
-  });
-  ['#inName','#inEmail','#inService'].forEach(id=> $(id).addEventListener('input', function(){ this.closest('.field').classList.remove('err'); }));
-
-  /* ---------- Invoice tracking ---------- */
-  $('#invForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    const id = $('#inInv').value.trim().toUpperCase();
-    if(!id){ $('#f-inv').classList.add('err'); return; }
-    $('#f-inv').classList.remove('err');
-    let hash = 0; for(let i=0;i<id.length;i++){ hash = (hash*31 + id.charCodeAt(i)) % 997; }
-    const stage = hash % 4;
-    const stages = ['Order Received','Production In Progress','Quality Review','Delivered'];
-    const details = ['Payment confirmed & project queued.','Our team is actively building your campaign assets.','Final QA and performance review underway.','All deliverables handed over. Thank you!'];
-    $('#invIdLabel').textContent = 'Invoice #' + id;
-    $('#invStatusPill').textContent = stages[stage];
-    const ol = $('#invSteps'); ol.innerHTML = '';
-    stages.forEach((s,i)=>{
-      const li = document.createElement('li');
-      li.className = i < stage ? 'done' : (i === stage ? 'current' : '');
-      li.innerHTML = '<b>' + s + '</b><small>' + (i <= stage ? details[i] : 'Pending') + '</small>';
-      ol.appendChild(li);
-    });
-    const eta = new Date(Date.now() + (14 - stage*4)*86400000);
-    $('#invEta').innerHTML = stage === 3
-      ? '<i class="fa-solid fa-circle-check" style="color:#3ddc84"></i> Completed on ' + eta.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'}) + '.'
-      : 'Estimated completion: <strong style="color:#e8edf2">' + eta.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'}) + '</strong>';
-    $('#invResult').classList.add('show');
-  });
-  $('#inInv').addEventListener('input', function(){ this.closest('.field').classList.remove('err'); });
-
-  /* ---------- Hero bars ---------- */
-  setTimeout(()=> $('#home').classList.add('loaded'), 350);
-
-  /* init */
-  onScroll();
-})();
+/* ---------------- FOOTER YEAR ---------------- */
+document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
