@@ -1,0 +1,980 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Growfy — Digital Marketing Agency | Empowering Brands In The Digital Age</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+:root{
+  --bg:#050607;
+  --bg2:#0a0d11;
+  --card:#0d1013;
+  --card2:#12161b;
+  --line:rgba(255,255,255,.08);
+  --line2:rgba(255,255,255,.14);
+  --blue:#2e9bff;
+  --blue2:#7cc5ff;
+  --blue-dim:rgba(46,157,255,.14);
+  --text:#e8edf2;
+  --muted:#98a2ad;
+  --muted2:#6d7883;
+  --radius:14px;
+  --head-h:64px;
+  --shadow:0 18px 40px rgba(0,0,0,.5);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,-apple-system,Segoe UI,sans-serif;
+  background:var(--bg);color:var(--text);
+  font-size:14px;line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:rgba(46,157,255,.35);color:#fff}
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:#08090b}
+::-webkit-scrollbar-thumb{background:#232a31;border-radius:8px}
+::-webkit-scrollbar-thumb:hover{background:#2e9bff}
+img,svg{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+ul{list-style:none}
+.container{width:min(1180px,92%);margin:0 auto}
+section{scroll-margin-top:calc(var(--head-h) + 16px)}
+.accent{color:var(--blue)}
+.eyebrow{display:inline-block;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:12px}
+h1,h2,h3,h4{line-height:1.2;font-weight:800}
+.muted{color:var(--muted)}
+
+/* ============ BUTTONS ============ */
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 22px;border-radius:8px;font-size:12.5px;font-weight:700;letter-spacing:.3px;transition:all .25s ease;min-height:42px;border:1px solid transparent}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 8px 22px rgba(46,157,255,.28)}
+.btn-primary:hover{background:#4fabff;transform:translateY(-2px);box-shadow:0 12px 28px rgba(46,157,255,.4)}
+.btn-primary:active{transform:translateY(0)}
+.btn-ghost{border-color:var(--line2);background:rgba(255,255,255,.04);color:var(--text)}
+.btn-ghost:hover{border-color:var(--blue);color:var(--blue2);background:rgba(46,157,255,.08);transform:translateY(-2px)}
+.btn-sm{padding:9px 16px;font-size:11.5px;min-height:36px}
+
+/* ============ HEADER ============ */
+header{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--head-h);background:rgba(5,6,8,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:all .3s ease}
+header.scrolled{background:rgba(6,8,10,.95);border-bottom-color:var(--line);box-shadow:0 10px 30px rgba(0,0,0,.45)}
+.head-in{height:var(--head-h);display:flex;align-items:center;gap:18px}
+.logo{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#0b0d10;border-radius:8px;padding:7px 13px;font-weight:800;font-size:14px;letter-spacing:.2px;flex-shrink:0}
+.logo i{color:var(--blue);font-size:14px}
+nav.main{margin-left:auto}
+nav.main > ul{display:flex;align-items:center;gap:2px}
+nav.main a.nl{display:inline-flex;align-items:center;gap:6px;padding:8px 10px;border-radius:999px;font-size:11.5px;font-weight:600;color:#b7c1cb;transition:all .2s ease;white-space:nowrap}
+nav.main a.nl:hover{color:#fff;background:rgba(255,255,255,.06)}
+nav.main a.nl.active{background:var(--blue);color:#fff;box-shadow:0 4px 14px rgba(46,157,255,.35)}
+.has-drop{position:relative}
+.has-drop .caret{font-size:9px;transition:transform .25s}
+.has-drop.open .caret{transform:rotate(180deg)}
+.drop{position:absolute;top:calc(100% + 10px);left:0;min-width:210px;background:#0d1116;border:1px solid var(--line);border-radius:12px;padding:8px;box-shadow:var(--shadow);opacity:0;transform:translateY(10px);pointer-events:none;transition:all .25s ease}
+.has-drop.open .drop{opacity:1;transform:translateY(0);pointer-events:auto}
+.drop a{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:12px;color:var(--muted);transition:all .18s}
+.drop a i{color:var(--blue);width:16px;text-align:center;font-size:13px}
+.drop a:hover{background:var(--blue-dim);color:#fff;transform:translateX(3px)}
+.nav-toggle{display:none;margin-left:auto;width:42px;height:42px;border-radius:10px;border:1px solid var(--line);color:var(--text);font-size:16px;transition:all .2s}
+.nav-toggle:hover{border-color:var(--blue);color:var(--blue)}
+
+/* ============ HERO ============ */
+.hero{position:relative;padding:calc(var(--head-h) + 78px) 0 96px;overflow:hidden;
+  background:
+   radial-gradient(900px 480px at 88% 6%,rgba(46,157,255,.16),transparent 62%),
+   radial-gradient(700px 420px at 6% 96%,rgba(46,157,255,.09),transparent 60%),
+   linear-gradient(180deg,#0b0f14 0%,#050607 100%);}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:46px 46px;-webkit-mask-image:radial-gradient(70% 60% at 60% 30%,#000 0%,transparent 75%);mask-image:radial-gradient(70% 60% at 60% 30%,#000 0%,transparent 75%);pointer-events:none}
+.hero-deco{position:absolute;right:-40px;top:40px;opacity:.14;pointer-events:none}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.badge-wrap{position:relative;display:inline-block;margin-bottom:20px}
+.badge{display:inline-flex;align-items:center;gap:9px;padding:7px 14px;border-radius:999px;border:1px solid rgba(46,157,255,.55);background:rgba(46,157,255,.12);color:var(--blue2);font-size:9.5px;font-weight:800;letter-spacing:2.4px;text-transform:uppercase;transition:all .2s}
+.badge:hover{background:rgba(46,157,255,.2)}
+.badge .caret{font-size:8px;transition:transform .25s}
+.badge-wrap.open .badge .caret{transform:rotate(180deg)}
+.badge-menu{position:absolute;top:calc(100% + 8px);left:0;min-width:200px;background:#0d1116;border:1px solid var(--line);border-radius:12px;padding:6px;box-shadow:var(--shadow);opacity:0;transform:translateY(8px);pointer-events:none;transition:all .22s;z-index:5}
+.badge-wrap.open .badge-menu{opacity:1;transform:translateY(0);pointer-events:auto}
+.badge-menu button{display:block;width:100%;text-align:left;padding:8px 12px;border-radius:8px;font-size:10px;font-weight:700;letter-spacing:1.6px;color:var(--muted);transition:all .15s}
+.badge-menu button:hover{background:var(--blue-dim);color:var(--blue2)}
+.hero h1{font-size:clamp(2.3rem,5.2vw,3.55rem);letter-spacing:-1px;margin-bottom:20px}
+.hero p.lead{max-width:440px;color:var(--muted);font-size:13.5px;margin-bottom:30px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+/* hero visual */
+.hero-visual{position:relative;min-height:400px}
+.glass{background:rgba(13,17,23,.82);border:1px solid var(--line);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:16px;box-shadow:var(--shadow)}
+.hv-main{position:absolute;right:0;top:70px;width:min(400px,92%);padding:24px;animation:float 6s ease-in-out infinite}
+.hv-head{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.hv-ico{width:42px;height:42px;border-radius:11px;background:var(--blue-dim);color:var(--blue);display:grid;place-items:center;font-size:17px}
+.hv-head h4{font-size:16px;font-weight:800}
+.hv-head span{display:block;font-size:10px;color:var(--muted2);letter-spacing:1.4px;text-transform:uppercase}
+.hv-label{display:flex;justify-content:space-between;font-size:10.5px;color:var(--muted);margin-bottom:8px;font-weight:600}
+.bar{height:6px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden;margin-bottom:12px}
+.bar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--blue),var(--blue2));transition:width 1.4s cubic-bezier(.22,.9,.35,1) .4s}
+.hero.loaded .bar i.b1{width:92%}
+.hero.loaded .bar i.b2{width:74%}
+.hv-chip{position:absolute;display:flex;align-items:center;gap:11px;padding:12px 16px;animation:float 7s ease-in-out infinite}
+.hv-chip .ci{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;font-size:14px}
+.hv-chip b{font-size:14px;font-weight:800;display:block;line-height:1.1}
+.hv-chip span{font-size:9.5px;color:var(--muted);letter-spacing:.6px}
+.hv-c1{top:6px;right:26px;animation-delay:.8s}
+.hv-c1 .ci{background:var(--blue-dim);color:var(--blue)}
+.hv-c2{bottom:26px;left:0;animation-delay:1.6s}
+.hv-c2 .ci{background:rgba(46,255,157,.12);color:#3ddc84}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+/* ============ STATS ============ */
+.stats{padding:74px 0 30px}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 20px;text-align:center;transition:all .3s ease}
+.stat:hover{transform:translateY(-6px);border-color:rgba(46,157,255,.45);box-shadow:0 16px 34px rgba(0,0,0,.45)}
+.stat i{font-size:22px;color:var(--blue);margin-bottom:14px}
+.stat .num{font-size:30px;font-weight:800;letter-spacing:-.5px}
+.stat .lbl{font-size:11.5px;color:var(--muted);margin-top:6px;line-height:1.45}
+
+/* ============ ABOUT / WELCOME ============ */
+.about{padding:56px 0 92px}
+.about-card{background:#0b0e11;border:1px solid var(--line);border-radius:20px;padding:44px;display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:center}
+.media{position:relative}
+.media-frame{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#161b21}
+.media-frame svg{width:100%;height:auto}
+.soc-float{position:absolute;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-size:15px;background:#14181d;border:1px solid var(--line);box-shadow:0 10px 22px rgba(0,0,0,.5);transition:all .25s;z-index:3}
+.soc-float:hover{transform:scale(1.12)}
+.sf-yt{left:-16px;top:16%;color:#ff4d4d}
+.sf-fb{left:-16px;top:58%;color:#4d8dff}
+.sf-tt{bottom:-16px;left:44%;color:#fff}
+.sf-bolt{top:-16px;right:-14px;background:var(--blue);color:#fff;border-color:transparent;box-shadow:0 10px 26px rgba(46,157,255,.5)}
+.about-card h2{font-size:clamp(1.6rem,3vw,2.15rem);margin-bottom:16px;letter-spacing:-.5px}
+.about-card p{color:var(--muted);font-size:13px;margin-bottom:26px}
+.about-cta{display:flex;gap:12px;flex-wrap:wrap}
+
+/* ============ SERVICES ============ */
+.services{position:relative;padding:96px 0;overflow:hidden;
+  background:
+   radial-gradient(760px 400px at 15% 0%,rgba(46,157,255,.1),transparent 60%),
+   radial-gradient(760px 400px at 90% 100%,rgba(46,157,255,.08),transparent 60%),
+   linear-gradient(180deg,#0a0d11,#07090b);}
+.services::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(115deg,rgba(255,255,255,.028) 0 2px,transparent 2px 14px);pointer-events:none}
+.sec-head{text-align:center;position:relative;margin-bottom:44px}
+.sec-head h2{font-size:clamp(1.7rem,3.4vw,2.3rem);letter-spacing:-.6px}
+.sec-head .sub{font-size:12px;color:var(--muted);max-width:520px;margin:12px auto 0}
+.svc-grid{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.svc{background:rgba(13,16,20,.78);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:var(--radius);padding:32px 24px;text-align:center;transition:all .3s ease}
+.svc:hover{transform:translateY(-7px);border-color:rgba(46,157,255,.5);box-shadow:0 20px 40px rgba(0,0,0,.5)}
+.svc .ico{width:56px;height:56px;margin:0 auto 16px;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid var(--line);display:grid;place-items:center;font-size:23px;color:#fff;transition:all .3s}
+.svc:hover .ico{background:var(--blue-dim);color:var(--blue);border-color:rgba(46,157,255,.4);transform:scale(1.06)}
+.svc h3{font-size:14.5px;font-weight:700;margin-bottom:9px}
+.svc p{font-size:11.5px;color:var(--muted)}
+.flash{animation:flashPulse 1.6s ease}
+@keyframes flashPulse{0%,100%{box-shadow:0 0 0 0 rgba(46,157,255,0)}25%{box-shadow:0 0 0 6px rgba(46,157,255,.45);border-color:var(--blue)}60%{box-shadow:0 0 0 3px rgba(46,157,255,.25)}}
+
+/* ============ GROWTH ============ */
+.growth{padding:96px 0}
+.g-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:18px}
+.g-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;transition:all .3s}
+.g-card:hover{transform:translateY(-6px);border-color:rgba(46,157,255,.45)}
+.g-card i{font-size:19px;color:var(--blue);margin-bottom:16px}
+.g-card h3{font-size:14px;font-weight:700;margin-bottom:10px}
+.g-card p{font-size:11.5px;color:var(--muted)}
+.g-wide{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.gw{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--blue);border-radius:12px;padding:26px 26px;transition:all .3s}
+.gw:hover{transform:translateY(-5px);background:var(--card2)}
+.gw h3{font-size:15px;font-weight:800;margin-bottom:10px}
+.gw p{font-size:11.5px;color:var(--muted)}
+
+/* ============ WHY ============ */
+.why{position:relative;padding:104px 0;overflow:hidden;
+  background:
+   radial-gradient(820px 460px at 80% 20%,rgba(46,157,255,.12),transparent 62%),
+   linear-gradient(180deg,#080a0d,#050607);}
+.why::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1px);background-size:26px 26px;-webkit-mask-image:radial-gradient(60% 60% at 70% 40%,#000,transparent 80%);mask-image:radial-gradient(60% 60% at 70% 40%,#000,transparent 80%);pointer-events:none}
+.why-grid{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.why h2{font-size:clamp(1.8rem,3.6vw,2.4rem);letter-spacing:-.6px;margin-bottom:20px}
+.why p{color:var(--muted);font-size:12.5px;margin-bottom:16px}
+.why .btn{margin-top:12px}
+.why-list{display:flex;flex-direction:column;gap:14px}
+.w-card{display:flex;gap:16px;align-items:flex-start;background:rgba(10,13,17,.78);border:1px solid var(--line);border-radius:12px;padding:20px;transition:all .3s;backdrop-filter:blur(6px)}
+.w-card:hover{transform:translateX(6px);border-color:rgba(46,157,255,.45)}
+.w-ico{flex-shrink:0;width:42px;height:42px;border-radius:10px;background:var(--blue-dim);color:var(--blue);display:grid;place-items:center;font-size:15px}
+.w-card h3{font-size:13.5px;font-weight:700;margin-bottom:6px}
+.w-card p{font-size:11px;color:var(--muted);margin:0}
+
+/* ============ PARTNERS ============ */
+.partners{padding:96px 0}
+.p-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.p-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 16px 20px;text-align:center;transition:all .3s;display:flex;flex-direction:column;align-items:center}
+.p-card:hover{transform:translateY(-7px);border-color:rgba(46,157,255,.45);box-shadow:0 18px 36px rgba(0,0,0,.45)}
+.avatar{width:64px;height:64px;border-radius:16px;display:grid;place-items:center;font-size:19px;font-weight:800;color:#fff;margin-bottom:14px;border:1px solid rgba(255,255,255,.14);text-shadow:0 2px 8px rgba(0,0,0,.35)}
+.p-card h3{font-size:12.5px;font-weight:700}
+.p-role{font-size:8.5px;font-weight:800;letter-spacing:1.8px;color:var(--blue);text-transform:uppercase;margin:5px 0 10px}
+.p-card p{font-size:10px;color:var(--muted);margin-bottom:14px;flex-grow:1}
+.p-soc{display:flex;gap:7px;justify-content:center}
+.p-soc a{width:27px;height:27px;border-radius:50%;background:#171b20;border:1px solid var(--line);display:grid;place-items:center;font-size:10px;color:#c4ced8;transition:all .2s}
+.p-soc a:hover{background:var(--blue);border-color:var(--blue);color:#fff;transform:translateY(-3px)}
+
+/* ============ FAQ ============ */
+.faq{position:relative;padding:104px 0;overflow:hidden;
+  background:
+   radial-gradient(700px 380px at 20% 10%,rgba(46,157,255,.1),transparent 60%),
+   radial-gradient(700px 380px at 85% 90%,rgba(46,157,255,.08),transparent 60%),
+   linear-gradient(180deg,#090b0e,#060809);}
+.faq::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(65deg,rgba(255,255,255,.025) 0 2px,transparent 2px 16px);pointer-events:none}
+.acc{position:relative;max-width:760px;margin:0 auto}
+.acc-item{background:rgba(10,13,17,.85);border:1px solid var(--line);border-radius:10px;margin-bottom:12px;overflow:hidden;transition:border-color .3s}
+.acc-item.open{border-color:rgba(46,157,255,.6);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.acc-btn{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 20px;text-align:left;font-size:12.5px;font-weight:600;color:var(--text);transition:color .25s}
+.acc-item.open .acc-btn{color:var(--blue)}
+.acc-btn .chev{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.06);display:grid;place-items:center;font-size:10px;color:var(--muted);transition:all .3s}
+.acc-item.open .chev{background:var(--blue);color:#fff;transform:rotate(180deg)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.acc-body p{padding:0 20px 18px;font-size:11.5px;color:var(--muted)}
+
+/* ============ FOOTER ============ */
+footer{background:#07090b;border-top:1px solid var(--line);padding-top:70px}
+.f-grid{display:grid;grid-template-columns:1.25fr 1fr 1fr 1.3fr;gap:44px;padding-bottom:52px}
+.f-brand p{font-size:11.5px;color:var(--muted);margin:18px 0 20px;max-width:250px}
+.f-soc{display:flex;gap:9px}
+.f-soc a{width:34px;height:34px;border-radius:50%;background:#12161b;border:1px solid var(--line);display:grid;place-items:center;font-size:12px;color:#c4ced8;transition:all .22s}
+.f-soc a:hover{background:var(--blue);border-color:var(--blue);color:#fff;transform:translateY(-3px)}
+.f-col h4{font-size:10.5px;font-weight:800;letter-spacing:2.2px;text-transform:uppercase;margin-bottom:20px;position:relative;padding-bottom:10px}
+.f-col h4::after{content:"";position:absolute;left:0;bottom:0;width:26px;height:2px;background:var(--blue);border-radius:2px}
+.f-col li{margin-bottom:11px}
+.f-col li a,.f-col li button.fl{display:inline-flex;align-items:center;gap:9px;font-size:11.5px;color:var(--muted);transition:all .2s;padding:0}
+.f-col li a i,.f-col li button.fl i{color:var(--blue);font-size:10px;transition:transform .2s}
+.f-col li a:hover,.f-col li button.fl:hover{color:var(--blue2);transform:translateX(4px)}
+.f-col li a:hover i,.f-col li button.fl:hover i{transform:translateX(2px)}
+.f-contact li{display:flex;gap:12px;margin-bottom:16px}
+.f-contact i{color:var(--blue);font-size:13px;margin-top:3px}
+.f-contact b{display:block;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;color:var(--text)}
+.f-contact span,.f-contact a.mail{display:block;font-size:11px;color:var(--muted)}
+.f-contact a.mail:hover{color:var(--blue2)}
+.f-bottom{border-top:1px solid var(--line);padding:18px 0;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.f-bottom p{font-size:10.5px;color:var(--muted2)}
+.pay{display:flex;align-items:center;gap:12px}
+.pay span{font-size:9px;letter-spacing:1.6px;color:var(--muted2);font-weight:700}
+.pay-pill{display:flex;gap:12px;background:#101317;border:1px solid var(--line);border-radius:8px;padding:8px 14px}
+.pay-pill i{font-size:19px;color:#8b96a1;transition:color .2s}
+.pay-pill i:hover{color:#fff}
+
+/* ============ MODALS ============ */
+.modal-backdrop{position:fixed;inset:0;z-index:1000;background:rgba(3,5,8,.75);backdrop-filter:blur(5px);display:none;align-items:center;justify-content:center;padding:20px}
+.modal-backdrop.show{display:flex}
+.modal{width:min(480px,94vw);max-height:88vh;overflow-y:auto;background:#0d1116;border:1px solid var(--line2);border-radius:16px;padding:28px;box-shadow:0 30px 70px rgba(0,0,0,.6);animation:pop .3s ease}
+@keyframes pop{from{opacity:0;transform:scale(.94) translateY(12px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.modal h3{font-size:18px;margin-bottom:6px}
+.modal .msub{font-size:11.5px;color:var(--muted);margin-bottom:22px}
+.m-close{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.06);color:var(--muted);font-size:13px;transition:all .2s}
+.m-close:hover{background:#ff4d4d;color:#fff}
+.modal{position:relative}
+.field{margin-bottom:15px}
+.field label{display:block;font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.field input,.field select,.field textarea{width:100%;background:#0a0d10;border:1px solid var(--line);border-radius:8px;padding:11px 13px;color:var(--text);font-size:12.5px;font-family:inherit;transition:all .2s;outline:none}
+.field select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6'><path d='M1 1l4 4 4-4' stroke='%239aa4ae' stroke-width='1.5' fill='none' stroke-linecap='round'/></svg>");background-repeat:no-repeat;background-position:right 13px center}
+.field textarea{resize:vertical;min-height:80px}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(46,157,255,.16)}
+.field.err input,.field.err select{border-color:#ff5c5c;box-shadow:0 0 0 3px rgba(255,92,92,.14)}
+.err-msg{display:none;font-size:10px;color:#ff7b7b;margin-top:5px}
+.field.err .err-msg{display:block}
+.m-success{text-align:center;padding:20px 0}
+.m-success i{font-size:44px;color:#3ddc84;margin-bottom:16px}
+.m-success h4{font-size:17px;margin-bottom:8px}
+.m-success p{font-size:12px;color:var(--muted)}
+/* invoice timeline */
+.inv-result{margin-top:22px;display:none}
+.inv-result.show{display:block;animation:pop .35s ease}
+.inv-head{display:flex;justify-content:space-between;align-items:center;background:#0a0d10;border:1px solid var(--line);border-radius:10px;padding:13px 16px;margin-bottom:18px}
+.inv-head b{font-size:12px}
+.inv-head span{font-size:10px;color:var(--blue);font-weight:700;letter-spacing:1px;text-transform:uppercase;background:var(--blue-dim);padding:4px 10px;border-radius:99px}
+.steps{position:relative;padding-left:6px}
+.steps li{position:relative;padding:0 0 22px 26px;font-size:11.5px;color:var(--muted2)}
+.steps li::before{content:"";position:absolute;left:0;top:4px;width:12px;height:12px;border-radius:50%;background:#1c2229;border:2px solid #2a323b}
+.steps li::after{content:"";position:absolute;left:5.5px;top:18px;bottom:2px;width:1.5px;background:#232a31}
+.steps li:last-child::after{display:none}
+.steps li.done{color:var(--muted)}
+.steps li.done::before{background:var(--blue);border-color:var(--blue)}
+.steps li.done::after{background:var(--blue)}
+.steps li.current{color:#fff;font-weight:700}
+.steps li.current::before{background:var(--blue);border-color:var(--blue);box-shadow:0 0 0 5px rgba(46,157,255,.2)}
+.steps li b{display:block;font-size:12px;color:inherit}
+.steps li small{font-size:10px;color:var(--muted2)}
+
+/* ============ TOAST / MISC ============ */
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,80px);z-index:1200;background:#10151b;border:1px solid var(--line2);border-left:3px solid var(--blue);border-radius:10px;padding:12px 20px;font-size:12px;font-weight:600;box-shadow:var(--shadow);opacity:0;transition:all .35s cubic-bezier(.22,.9,.35,1);display:flex;align-items:center;gap:10px;max-width:90vw}
+.toast.show{transform:translate(-50%,0);opacity:1}
+.toast i{color:var(--blue)}
+.to-top{position:fixed;right:22px;bottom:22px;z-index:950;width:42px;height:42px;border-radius:12px;background:var(--blue);color:#fff;font-size:14px;box-shadow:0 10px 26px rgba(46,157,255,.4);opacity:0;pointer-events:none;transform:translateY(14px);transition:all .3s}
+.to-top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+.to-top:hover{background:#4fabff}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1080px){
+  nav.main{position:fixed;top:var(--head-h);left:0;right:0;background:#0a0c0f;border-bottom:1px solid var(--line);max-height:0;overflow:hidden;transition:max-height .4s ease;margin:0}
+  header.menu-open nav.main{max-height:calc(100vh - var(--head-h));overflow-y:auto}
+  nav.main > ul{flex-direction:column;align-items:stretch;padding:14px 5%;gap:4px}
+  nav.main a.nl{padding:12px 14px;border-radius:10px;font-size:13px;justify-content:flex-start}
+  .has-drop .drop{position:static;opacity:1;transform:none;pointer-events:none;display:none;box-shadow:none;margin:4px 0 8px 12px;background:#0e1216}
+  .has-drop.open .drop{display:block;pointer-events:auto}
+  .nav-toggle{display:grid;place-items:center}
+  .hero-grid{grid-template-columns:1fr;gap:60px}
+  .hero-visual{min-height:360px}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .about-card{grid-template-columns:1fr;padding:32px;gap:40px}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .g-grid{grid-template-columns:1fr}
+  .g-wide{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr;gap:40px}
+  .p-grid{grid-template-columns:repeat(3,1fr)}
+  .f-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .stats-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .stat{padding:22px 12px}
+  .stat .num{font-size:24px}
+  .svc-grid{grid-template-columns:1fr}
+  .p-grid{grid-template-columns:1fr 1fr}
+  .f-grid{grid-template-columns:1fr;gap:34px}
+  .hero{padding-top:calc(var(--head-h) + 50px)}
+  .hv-main{position:relative;top:0;right:0;width:100%;margin-top:50px}
+  .hv-c1{right:0}
+  .hero-visual{min-height:0}
+  .about-card{padding:24px}
+  .f-bottom{justify-content:center;text-align:center}
+}
+@media(max-width:420px){.p-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header id="header">
+  <div class="container head-in">
+    <a href="#home" class="logo" aria-label="Growfy home"><i class="fa-solid fa-chart-line"></i> Growfy</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    <nav class="main" aria-label="Primary">
+      <ul>
+        <li><a class="nl active" href="#home" data-spy="home">Home</a></li>
+        <li><a class="nl" href="#partnerships" data-spy="partnerships">Portfolio</a></li>
+        <li class="has-drop" id="svcDrop">
+          <a class="nl dd-toggle" href="#services" data-spy="services" aria-haspopup="true" aria-expanded="false">Services <i class="fa-solid fa-chevron-down caret"></i></a>
+          <div class="drop" role="menu">
+            <a href="#services" data-flash="#svc-ig"><i class="fa-brands fa-instagram"></i> Instagram Growth</a>
+            <a href="#services" data-flash="#svc-yt"><i class="fa-brands fa-youtube"></i> YouTube Service</a>
+            <a href="#services" data-flash="#svc-fb"><i class="fa-brands fa-facebook-f"></i> Facebook Service</a>
+            <a href="#services" data-flash="#svc-sp"><i class="fa-brands fa-spotify"></i> Spotify Service</a>
+            <a href="#services" data-flash="#svc-tt"><i class="fa-brands fa-tiktok"></i> TikTok Service</a>
+            <a href="#services" data-flash="#svc-am"><i class="fa-brands fa-apple"></i> Apple Music</a>
+          </div>
+        </li>
+        <li><a class="nl" href="#services" data-flash="#svc-yt">YouTube Promotion</a></li>
+        <li><a class="nl" href="#" data-open-modal="start" data-service="Website Design">Website Design</a></li>
+        <li><a class="nl" href="#partnerships">Team Member</a></li>
+        <li><a class="nl" href="#faq" data-spy="faq">Comments</a></li>
+        <li><a class="nl" href="#about" data-spy="about">About Us</a></li>
+        <li><a class="nl" href="#" data-open-modal="invoice">Invoice Tracking</a></li>
+        <li><a class="nl" href="#contact" data-spy="contact">Support</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <svg class="hero-deco" width="520" height="300" viewBox="0 0 520 300" fill="none" aria-hidden="true">
+    <g stroke="#2e9bff" stroke-width="3">
+      <polyline points="10,240 90,190 170,215 250,140 330,170 410,90 500,120" fill="none"/>
+    </g>
+    <g fill="#2e9bff" opacity=".55">
+      <rect x="30" y="250" width="26" height="40" rx="4"/><rect x="110" y="230" width="26" height="60" rx="4"/>
+      <rect x="190" y="245" width="26" height="45" rx="4"/><rect x="270" y="205" width="26" height="85" rx="4"/>
+      <rect x="350" y="225" width="26" height="65" rx="4"/><rect x="430" y="180" width="26" height="110" rx="4"/>
+    </g>
+  </svg>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <div class="badge-wrap" id="badgeWrap">
+        <button class="badge" id="badgeBtn" aria-haspopup="true" aria-expanded="false"><span id="badgeText">Grow Your Business</span> <i class="fa-solid fa-chevron-down caret"></i></button>
+        <div class="badge-menu" role="menu">
+          <button data-badge="Grow Your Business">Grow Your Business</button>
+          <button data-badge="Scale Your Reach">Scale Your Reach</button>
+          <button data-badge="Boost Your Sales">Boost Your Sales</button>
+          <button data-badge="Own Your Niche">Own Your Niche</button>
+        </div>
+      </div>
+      <h1>Empowering Brands<br>In The <span class="accent">Digital Age</span></h1>
+      <p class="lead">We combine data-driven strategies with creative excellence to help your business stay relevant and competitive in today's fast-paced landscape.</p>
+      <div class="hero-cta">
+        <button class="btn btn-primary" data-open-modal="start">Get Started <i class="fa-solid fa-arrow-right"></i></button>
+        <a class="btn btn-ghost" href="#partnerships"><i class="fa-solid fa-play"></i> View Portfolio</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hv-chip glass hv-c1"><span class="ci"><i class="fa-solid fa-users"></i></span><span><b>10k+</b><span>Happy Clients</span></span></div>
+      <div class="hv-main glass">
+        <div class="hv-head">
+          <span class="hv-ico"><i class="fa-solid fa-chart-line"></i></span>
+          <div><h4>Digital Marketing</h4><span>Live Campaign Dashboard</span></div>
+        </div>
+        <div class="hv-label"><span>Next-Gen Strategies</span><span>92%</span></div>
+        <div class="bar"><i class="b1"></i></div>
+        <div class="hv-label"><span>Audience Retention</span><span>74%</span></div>
+        <div class="bar"><i class="b2"></i></div>
+      </div>
+      <div class="hv-chip glass hv-c2"><span class="ci"><i class="fa-solid fa-gauge-high"></i></span><span><b>95%</b><span>Success Rate</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+<section class="stats" id="stats">
+  <div class="container stats-grid">
+    <div class="stat reveal"><i class="fa-solid fa-trophy"></i><div class="num"><span class="count" data-count="19">0</span>+</div><div class="lbl">Awards Recognized<br>Globally</div></div>
+    <div class="stat reveal" data-d="80"><i class="fa-solid fa-clock-rotate-left"></i><div class="num"><span class="count" data-count="7">0</span>+</div><div class="lbl">Years of<br>Rich Experience</div></div>
+    <div class="stat reveal" data-d="160"><i class="fa-solid fa-circle-check"></i><div class="num"><span class="count" data-count="869">0</span>+</div><div class="lbl">Completed<br>Successful Projects</div></div>
+    <div class="stat reveal" data-d="240"><i class="fa-solid fa-heart"></i><div class="num"><span class="count" data-count="673">0</span>+</div><div class="lbl">Happy Clients<br>Satisfied with Quality</div></div>
+  </div>
+</section>
+
+<!-- ================= ABOUT / WELCOME ================= -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-card reveal">
+      <div class="media">
+        <div class="media-frame">
+          <svg viewBox="0 0 520 400" role="img" aria-label="Illustration of a strategist working at a desk">
+            <rect width="520" height="400" fill="#171d24"/>
+            <rect x="36" y="34" width="196" height="150" rx="10" fill="#1f2731"/>
+            <g fill="#28313c">
+              <rect x="48" y="48" width="172" height="10" rx="5"/><rect x="48" y="68" width="172" height="10" rx="5"/>
+              <rect x="48" y="88" width="172" height="10" rx="5"/><rect x="48" y="108" width="172" height="10" rx="5"/>
+              <rect x="48" y="128" width="172" height="10" rx="5"/><rect x="48" y="148" width="172" height="10" rx="5"/>
+            </g>
+            <rect x="292" y="52" width="86" height="104" rx="8" fill="#202933"/>
+            <polyline points="304,132 326,104 344,118 366,80" stroke="#2e9bff" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <circle cx="366" cy="80" r="6" fill="#7cc5ff"/>
+            <rect x="418" y="238" width="46" height="42" rx="6" fill="#2a323d"/>
+            <g fill="#2f7d4f"><circle cx="428" cy="222" r="14"/><circle cx="448" cy="210" r="16"/><circle cx="460" cy="228" r="12"/></g>
+            <path d="M212 128 q48 -44 96 0 v96 q-48 30 -96 0 z" fill="#3b2a23"/>
+            <circle cx="260" cy="158" r="34" fill="#e9b48c"/>
+            <path d="M226 152 q10 -34 34 -34 q24 0 34 34 q-16 -16 -34 -16 q-18 0 -34 16z" fill="#3b2a23"/>
+            <path d="M196 292 q64 -52 128 0 v14 h-128 z" fill="#242c36"/>
+            <path d="M248 262 l12 22 l12 -22 q-12 -10 -24 0z" fill="#e6ebf0"/>
+            <rect x="52" y="292" width="416" height="16" rx="8" fill="#2b333e"/>
+            <rect x="80" y="308" width="12" height="60" rx="6" fill="#232a34"/>
+            <rect x="428" y="308" width="12" height="60" rx="6" fill="#232a34"/>
+            <path d="M300 292 l84 -8 v-58 l-84 8 z" fill="#414c59"/>
+            <rect x="296" y="286" width="96" height="8" rx="4" fill="#39424d"/>
+            <rect x="150" y="270" width="26" height="22" rx="5" fill="#2e9bff"/>
+            <path d="M176 274 q12 4 0 14" stroke="#2e9bff" stroke-width="4" fill="none"/>
+          </svg>
+        </div>
+        <a class="soc-float sf-yt" href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a class="soc-float sf-fb" href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a class="soc-float sf-tt" href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <span class="soc-float sf-bolt" aria-hidden="true"><i class="fa-solid fa-bolt"></i></span>
+      </div>
+      <div>
+        <span class="eyebrow">Start Your Business With Our Services</span>
+        <h2>Welcome to <span class="accent">Growfy Agency</span></h2>
+        <p>At Growfy, we blend cutting-edge technology with strategic creative thinking. Whether it's Digital Marketing, Graphic Design, or Web Development, our mission is to scale your brand through measurable results and premium user experiences.</p>
+        <div class="about-cta">
+          <button class="btn btn-primary" data-open-modal="start">Get Started <i class="fa-solid fa-arrow-right"></i></button>
+          <a class="btn btn-ghost" href="#contact">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Boost Your Presence</span>
+      <h2>Our Most Ordered Services</h2>
+    </div>
+    <div class="svc-grid">
+      <article class="svc reveal" id="svc-ig"><span class="ico"><i class="fa-brands fa-instagram"></i></span><h3>Instagram</h3><p>Grow your followers and engagement with our premium organic strategies.</p></article>
+      <article class="svc reveal" data-d="80" id="svc-yt"><span class="ico"><i class="fa-brands fa-youtube"></i></span><h3>YouTube Service</h3><p>Increase views, watch time and subscribers for your channel monetization.</p></article>
+      <article class="svc reveal" data-d="160" id="svc-fb"><span class="ico"><i class="fa-brands fa-facebook-f"></i></span><h3>Facebook Service</h3><p>Professional page growth and ad campaign management for your brand.</p></article>
+      <article class="svc reveal" id="svc-sp"><span class="ico"><i class="fa-brands fa-spotify"></i></span><h3>Spotify Service</h3><p>Boost your streams and monthly listeners with targeted music promotion.</p></article>
+      <article class="svc reveal" data-d="80" id="svc-tt"><span class="ico"><i class="fa-brands fa-tiktok"></i></span><h3>TikTok Service</h3><p>Go viral with our specialized TikTok algorithm growth packages.</p></article>
+      <article class="svc reveal" data-d="160" id="svc-am"><span class="ico"><i class="fa-brands fa-apple"></i></span><h3>Apple Music</h3><p>Premium placement and stream boosting for high-tier music artists.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GROWTH ================= -->
+<section class="growth" id="growth">
+  <div class="container">
+    <div class="sec-head reveal">
+      <h2>Accelerating Your <span class="accent">Social Media</span> Growth</h2>
+    </div>
+    <div class="g-grid">
+      <article class="g-card reveal"><i class="fa-solid fa-rocket"></i><h3>Creative Consistency</h3><p>We blend high-quality visuals and compelling storytelling to capture attention and keep your audience engaged across all platforms.</p></article>
+      <article class="g-card reveal" data-d="80"><i class="fa-solid fa-chart-line"></i><h3>Data-Driven Strategy</h3><p>Advanced targeting and optimized paid campaigns ensure your brand message reaches the right audience at the perfect time.</p></article>
+      <article class="g-card reveal" data-d="160"><i class="fa-solid fa-microchip"></i><h3>Continuous Analysis</h3><p>Sustained growth comes from studying performance metrics and refining your approach based on real-time user behavior.</p></article>
+    </div>
+    <div class="g-wide">
+      <article class="gw reveal"><h3>Meaningful <span class="accent">Engagement</span></h3><p>Success depends on two-way interactions. We help you spark dialogue, respond to comments, and encourage user-generated content that builds authentic community trust and increases visibility.</p></article>
+      <article class="gw reveal" data-d="100"><h3>Influencer <span class="accent">Partnerships</span></h3><p>Accelerate growth with creators who resonate with your values. Authentic endorsements from trusted influencers introduce your brand to highly engaged new audiences and enhance credibility instantly.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY ================= -->
+<section class="why" id="why">
+  <div class="container why-grid">
+    <div class="reveal">
+      <span class="eyebrow">The Growfy Edge</span>
+      <h2>Why Choose <span class="accent">Growfy Agency?</span></h2>
+      <p>Growfy Agency helps your brand stand out with visually striking, meaningful, and emotionally engaging content. We blend modern design trends with powerful storytelling to ensure your message connects instantly.</p>
+      <p>Beyond design, we deliver smart, data-driven digital marketing strategies. Our SEO, PPC, and Social Media management ensure higher visibility and better-quality traffic for long-term growth.</p>
+      <a class="btn btn-primary" href="#about">Learn More About Us <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="why-list">
+      <div class="w-card reveal"><span class="w-ico"><i class="fa-solid fa-pen-nib"></i></span><div><h3>Creative Purpose</h3><p>Every pixel and word is crafted to strengthen your identity and leave a lasting impression.</p></div></div>
+      <div class="w-card reveal" data-d="90"><span class="w-ico"><i class="fa-solid fa-bullseye"></i></span><div><h3>Data-Driven Results</h3><p>We use advanced analytics to monitor and optimize campaigns for maximum ROI.</p></div></div>
+      <div class="w-card reveal" data-d="180"><span class="w-ico"><i class="fa-solid fa-arrows-rotate"></i></span><div><h3>Continuous Growth</h3><p>Our proactive approach ensures your brand stays ahead in a competitive digital landscape.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PARTNERSHIPS ================= -->
+<section class="partners" id="partnerships">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Global Impact</span>
+      <h2>Our Elite <span class="accent">Partnerships</span></h2>
+    </div>
+    <div class="p-grid">
+      <article class="p-card reveal">
+        <div class="avatar" style="background:linear-gradient(135deg,#b98a4e,#6d4a26)">KW</div>
+        <h3>Kevin Willes</h3><div class="p-role">Music Producer</div>
+        <p>Scaling international music distribution through strategic digital presence and modern branding.</p>
+        <div class="p-soc"><a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="https://spotify.com" target="_blank" rel="noopener" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a></div>
+      </article>
+      <article class="p-card reveal" data-d="70">
+        <div class="avatar" style="background:linear-gradient(135deg,#5f7d8c,#2c3e49)">JL</div>
+        <h3>Johnny Lightning</h3><div class="p-role">Rock Artist</div>
+        <p>Implementing automated song-selling systems and premium e-commerce solutions for artists.</p>
+        <div class="p-soc"><a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a><a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></div>
+      </article>
+      <article class="p-card reveal" data-d="140">
+        <div class="avatar" style="background:linear-gradient(135deg,#7d8ca0,#3a4657)">AH</div>
+        <h3>Amir Hossain</h3><div class="p-role">Tech Entrepreneur</div>
+        <p>Transforming digital ecosystems with high-conversion UI/UX and advanced Laravel architectures.</p>
+        <div class="p-soc"><a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a><a href="https://x.com" target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a><a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></div>
+      </article>
+      <article class="p-card reveal" data-d="210">
+        <div class="avatar" style="background:linear-gradient(135deg,#c9b23f,#7a6a1e)">SJ</div>
+        <h3>Sarah Jenkins</h3><div class="p-role">Digital Creator</div>
+        <p>Optimizing social media growth with targeted content strategies and data-driven marketing.</p>
+        <div class="p-soc"><a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a><a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></div>
+      </article>
+      <article class="p-card reveal" data-d="280">
+        <div class="avatar" style="background:linear-gradient(135deg,#a08d76,#57493a)">MR</div>
+        <h3>Marcus Reed</h3><div class="p-role">CEO, Emo Bazar</div>
+        <p>Revolutionizing the e-commerce shopping experience with premium WooCommerce optimization.</p>
+        <div class="p-soc"><a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a><a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a><a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Questions &amp; Answers</span>
+      <h2>Frequently Asked<br><span class="accent">Questions</span></h2>
+    </div>
+    <div class="acc reveal" id="acc">
+      <div class="acc-item open">
+        <button class="acc-btn" aria-expanded="true">What services does Growfy Agency offer? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></button>
+        <div class="acc-body"><p>We provide comprehensive digital solutions including Social Media Marketing, SEO optimization, Web Development, Graphic Design, and Paid Ad management (PPC) tailored to scale your brand.</p></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-btn" aria-expanded="false">How long does it take to see results? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></button>
+        <div class="acc-body"><p>Most campaigns show measurable traction within 4–6 weeks. Compounding growth typically kicks in around month three, depending on the platform, budget and your starting point.</p></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-btn" aria-expanded="false">Do you provide customized packages? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></button>
+        <div class="acc-body"><p>Yes. Every engagement starts with a discovery call so we can build a package around your goals, timeline and budget — no one-size-fits-all retainers.</p></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-btn" aria-expanded="false">Which platforms do you specialize in? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></button>
+        <div class="acc-body"><p>Instagram, YouTube, Facebook, TikTok, Spotify and Apple Music — plus search (Google) and owned web properties built for conversion.</p></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-btn" aria-expanded="false">How do I get started? <span class="chev"><i class="fa-solid fa-chevron-down"></i></span></button>
+        <div class="acc-body"><p>Click any "Get Started" button, book your free strategy call, and we'll send a tailored growth roadmap within 48 hours.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer id="contact">
+  <div class="container">
+    <div class="f-grid">
+      <div class="f-brand">
+        <a href="#home" class="logo"><i class="fa-solid fa-chart-line"></i> Growfy</a>
+        <p>At Growfy Agency, we blend cutting-edge technology with strategic thinking to facilitate digital success for brands thriving online.</p>
+        <div class="f-soc">
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://spotify.com" target="_blank" rel="noopener" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a>
+        </div>
+      </div>
+      <div class="f-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services" data-flash="#svc-yt"><i class="fa-solid fa-angle-right"></i> YouTube Marketing</a></li>
+          <li><a href="#services" data-flash="#svc-sp"><i class="fa-solid fa-angle-right"></i> Spotify Promotion</a></li>
+          <li><button class="fl" data-open-modal="start" data-service="Graphic Design"><i class="fa-solid fa-angle-right"></i> Graphic Design</button></li>
+          <li><button class="fl" data-open-modal="start" data-service="Website Design"><i class="fa-solid fa-angle-right"></i> Website Design</button></li>
+          <li><a href="#services" data-flash="#svc-tt"><i class="fa-solid fa-angle-right"></i> TikTok Strategy</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
+          <li><button class="fl" data-toast="Our blog launches soon — stay tuned!"><i class="fa-solid fa-angle-right"></i> Our Blog</button></li>
+          <li><button class="fl" data-toast="We're hiring! Send your portfolio to growfyagency@gmail.com"><i class="fa-solid fa-angle-right"></i> Career</button></li>
+          <li><a href="#contact"><i class="fa-solid fa-angle-right"></i> Help &amp; Support</a></li>
+          <li><button class="fl" data-open-modal="invoice"><i class="fa-solid fa-angle-right"></i> Invoice</button></li>
+          <li><button class="fl" data-toast="Privacy policy: we never share your data with third parties."><i class="fa-solid fa-angle-right"></i> Privacy Policy</button></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h4>Contact Us</h4>
+        <ul class="f-contact">
+          <li><i class="fa-solid fa-location-dot"></i><div><b>Main Branch (BD)</b><span>Uttara Road-11, Sector-11, Dhaka-1230, Bangladesh</span></div></li>
+          <li><i class="fa-solid fa-globe"></i><div><b>International (VO)</b><span>Felipe Villanueva 107 60085, Mexico</span></div></li>
+          <li><i class="fa-solid fa-envelope"></i><div><b>Email</b><a class="mail" href="mailto:growfyagency@gmail.com">growfyagency@gmail.com</a></div></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p>© 2026 Team Service. Built with passion for digital growth.</p>
+      <div class="pay">
+        <span>SECURE PAYMENTS</span>
+        <div class="pay-pill">
+          <i class="fa-brands fa-cc-visa" title="Visa"></i>
+          <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+          <i class="fa-brands fa-cc-amex" title="Amex"></i>
+          <i class="fa-brands fa-cc-paypal" title="PayPal"></i>
+          <i class="fa-brands fa-cc-stripe" title="Stripe"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= MODALS ================= -->
+<div class="modal-backdrop" id="modal-start" role="dialog" aria-modal="true" aria-labelledby="startTitle">
+  <div class="modal">
+    <button class="m-close" data-close-modal aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <form id="startForm" novalidate>
+      <h3 id="startTitle">Get Started <span class="accent">Today</span></h3>
+      <p class="msub">Tell us about your project and we'll send a tailored growth roadmap within 48 hours.</p>
+      <div class="field" id="f-name"><label for="inName">Your Name</label><input id="inName" type="text" placeholder="e.g. Ayesha Rahman"><span class="err-msg">Please enter your name (min 2 characters).</span></div>
+      <div class="field" id="f-email"><label for="inEmail">Email Address</label><input id="inEmail" type="email" placeholder="you@company.com"><span class="err-msg">Please enter a valid email address.</span></div>
+      <div class="field" id="f-service"><label for="inService">Service Needed</label>
+        <select id="inService">
+          <option value="">Select a service…</option>
+          <option>Instagram Growth</option><option>YouTube Promotion</option><option>Facebook Ads</option>
+          <option>Spotify Promotion</option><option>TikTok Strategy</option><option>Apple Music Placement</option>
+          <option>Website Design</option><option>Graphic Design</option>
+        </select>
+        <span class="err-msg">Please choose a service.</span>
+      </div>
+      <div class="field"><label for="inMsg">Project Details (optional)</label><textarea id="inMsg" placeholder="Goals, timeline, budget…"></textarea></div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Submit Request <i class="fa-solid fa-paper-plane"></i></button>
+    </form>
+    <div class="m-success" id="startSuccess" hidden>
+      <i class="fa-solid fa-circle-check"></i>
+      <h4>Request Received!</h4>
+      <p>Thanks for reaching out — our strategy team will contact you within 48 hours.</p>
+      <button class="btn btn-ghost btn-sm" data-close-modal style="margin-top:18px">Done</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="modal-invoice" role="dialog" aria-modal="true" aria-labelledby="invTitle">
+  <div class="modal">
+    <button class="m-close" data-close-modal aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <h3 id="invTitle">Invoice <span class="accent">Tracking</span></h3>
+    <p class="msub">Enter your invoice ID (e.g. GRW-2026-0148) to see its live status.</p>
+    <form id="invForm" novalidate>
+      <div class="field" id="f-inv"><label for="inInv">Invoice ID</label><input id="inInv" type="text" placeholder="GRW-2026-0148"><span class="err-msg">Please enter your invoice ID.</span></div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center"><i class="fa-solid fa-magnifying-glass-location"></i> Track Invoice</button>
+    </form>
+    <div class="inv-result" id="invResult">
+      <div class="inv-head"><b id="invIdLabel">Invoice #—</b><span id="invStatusPill">—</span></div>
+      <ol class="steps" id="invSteps"></ol>
+      <p class="muted" style="font-size:11px" id="invEta"></p>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"><i class="fa-solid fa-circle-info"></i><span id="toastMsg"></span></div>
+<button class="to-top" id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script>
+(function(){
+  "use strict";
+  const $  = (s,c)=> (c||document).querySelector(s);
+  const $$ = (s,c)=> Array.prototype.slice.call((c||document).querySelectorAll(s));
+
+  /* ---------- Header scroll + back to top ---------- */
+  const header = $('#header'), toTop = $('#toTop');
+  function onScroll(){
+    header.classList.toggle('scrolled', window.scrollY > 30);
+    toTop.classList.toggle('show', window.scrollY > 600);
+    spy();
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  toTop.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+
+  /* ---------- Mobile nav ---------- */
+  const navToggle = $('#navToggle');
+  navToggle.addEventListener('click', ()=>{
+    const open = header.classList.toggle('menu-open');
+    navToggle.setAttribute('aria-expanded', open);
+    navToggle.innerHTML = open ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+  });
+  function closeMenu(){
+    header.classList.remove('menu-open');
+    navToggle.setAttribute('aria-expanded','false');
+    navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+  }
+
+  /* ---------- Dropdowns (services + badge) ---------- */
+  const svcDrop = $('#svcDrop'), badgeWrap = $('#badgeWrap');
+  function closeDrops(){
+    svcDrop.classList.remove('open');
+    $('.dd-toggle', svcDrop).setAttribute('aria-expanded','false');
+    badgeWrap.classList.remove('open');
+    $('#badgeBtn').setAttribute('aria-expanded','false');
+  }
+  $('.dd-toggle', svcDrop).addEventListener('click', function(e){
+    if(window.innerWidth <= 1080){ e.preventDefault(); }
+    e.stopPropagation();
+    const open = svcDrop.classList.toggle('open');
+    this.setAttribute('aria-expanded', open);
+    badgeWrap.classList.remove('open');
+  });
+  $('#badgeBtn').addEventListener('click', function(e){
+    e.stopPropagation();
+    const open = badgeWrap.classList.toggle('open');
+    this.setAttribute('aria-expanded', open);
+    svcDrop.classList.remove('open');
+  });
+  $$('.badge-menu button').forEach(b=>{
+    b.addEventListener('click', ()=>{
+      $('#badgeText').textContent = b.dataset.badge;
+      closeDrops();
+      toast('Goal set: ' + b.dataset.badge, 'fa-bullseye');
+    });
+  });
+  document.addEventListener('click', e=>{
+    if(!svcDrop.contains(e.target) && !badgeWrap.contains(e.target)) closeDrops();
+  });
+
+  /* ---------- Toast ---------- */
+  let toastTimer;
+  function toast(msg, icon){
+    const t = $('#toast');
+    $('#toastMsg').textContent = msg;
+    $('i', t).className = 'fa-solid ' + (icon || 'fa-circle-info');
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(()=> t.classList.remove('show'), 3200);
+  }
+
+  /* ---------- Flash highlight ---------- */
+  function flash(sel){
+    const el = $(sel);
+    if(!el) return;
+    el.classList.remove('flash');
+    void el.offsetWidth;
+    el.classList.add('flash');
+    setTimeout(()=> el.classList.remove('flash'), 1700);
+  }
+
+  /* ---------- Global click delegation ---------- */
+  document.addEventListener('click', function(e){
+    const el = e.target.closest('[data-open-modal],[data-toast],[data-flash]');
+    if(!el) return;
+    if(el.dataset.openModal){
+      e.preventDefault();
+      openModal(el.dataset.openModal, el.dataset.service);
+      closeMenu(); closeDrops();
+      return;
+    }
+    if(el.dataset.toast){
+      e.preventDefault();
+      toast(el.dataset.toast, 'fa-circle-info');
+      closeMenu();
+      return;
+    }
+    if(el.dataset.flash){
+      closeMenu(); closeDrops();
+      const target = el.dataset.flash;
+      setTimeout(()=> flash(target), 550);
+    }
+  });
+
+  /* close mobile menu on any nav link click */
+  $$('nav.main a.nl, nav.main .drop a').forEach(a=> a.addEventListener('click', ()=>{ closeMenu(); closeDrops(); }));
+
+  /* ---------- Scroll spy ---------- */
+  const spyMap = {};
+  $$('[data-spy]').forEach(a=>{ spyMap[a.dataset.spy] = a; });
+  const spyOrder = ['home','about','services','partnerships','faq','contact'];
+  function spy(){
+    const pos = window.scrollY + 160;
+    let current = 'home';
+    spyOrder.forEach(id=>{
+      const sec = document.getElementById(id);
+      if(sec && sec.offsetTop <= pos) current = id;
+    });
+    if(window.innerHeight + window.scrollY >= document.body.offsetHeight - 40) current = 'contact';
+    Object.keys(spyMap).forEach(k=> spyMap[k].classList.toggle('active', k === current));
+  }
+
+  /* ---------- Counters ---------- */
+  const counted = new WeakSet();
+  const cObs = new IntersectionObserver(entries=>{
+    entries.forEach(en=>{
+      if(!en.isIntersecting || counted.has(en.target)) return;
+      counted.add(en.target);
+      const el = en.target, target = parseInt(el.dataset.count,10), dur = 1400, t0 = performance.now();
+      (function tick(t){
+        const p = Math.min((t - t0)/dur, 1);
+        el.textContent = Math.round(target * (1 - Math.pow(1-p,3)));
+        if(p < 1) requestAnimationFrame(tick);
+      })(t0);
+    });
+  },{threshold:.5});
+  $$('.count').forEach(el=> cObs.observe(el));
+
+  /* ---------- Reveal on scroll ---------- */
+  const rObs = new IntersectionObserver(entries=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting){ en.target.classList.add('in'); rObs.unobserve(en.target); }
+    });
+  },{threshold:.14});
+  $$('.reveal').forEach(el=>{
+    el.style.transitionDelay = (el.dataset.d || 0) + 'ms';
+    rObs.observe(el);
+  });
+
+  /* ---------- FAQ accordion ---------- */
+  $$('#acc .acc-item').forEach(item=>{
+    const btn = $('.acc-btn', item), body = $('.acc-body', item);
+    if(item.classList.contains('open')) body.style.maxHeight = body.scrollHeight + 'px';
+    btn.addEventListener('click', ()=>{
+      const isOpen = item.classList.contains('open');
+      $$('#acc .acc-item').forEach(o=>{
+        o.classList.remove('open');
+        $('.acc-body', o).style.maxHeight = 0;
+        $('.acc-btn', o).setAttribute('aria-expanded','false');
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        body.style.maxHeight = body.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+
+  /* ---------- Modals ---------- */
+  function openModal(name, service){
+    const m = $('#modal-' + name);
+    if(!m) return;
+    m.classList.add('show');
+    document.body.style.overflow = 'hidden';
+    if(name === 'start'){
+      $('#startForm').hidden = false;
+      $('#startSuccess').hidden = true;
+      if(service) $('#inService').value = service;
+      setTimeout(()=> $('#inName').focus(), 60);
+    }
+    if(name === 'invoice') setTimeout(()=> $('#inInv').focus(), 60);
+  }
+  function closeModal(m){
+    m.classList.remove('show');
+    document.body.style.overflow = '';
+  }
+  $$('.modal-backdrop').forEach(bd=>{
+    bd.addEventListener('click', e=>{ if(e.target === bd) closeModal(bd); });
+    $$('[data-close-modal]', bd).forEach(b=> b.addEventListener('click', ()=> closeModal(bd)));
+  });
+  document.addEventListener('keydown', e=>{
+    if(e.key === 'Escape'){ $$('.modal-backdrop.show').forEach(closeModal); closeDrops(); closeMenu(); }
+  });
+
+  /* ---------- Get Started form ---------- */
+  $('#startForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    let ok = true;
+    const name = $('#inName').value.trim();
+    const email = $('#inEmail').value.trim();
+    const svc = $('#inService').value;
+    $('#f-name').classList.toggle('err', !(ok = name.length >= 2 && ok, name.length >= 2));
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+    $('#f-email').classList.toggle('err', !emailOk);
+    $('#f-service').classList.toggle('err', !svc);
+    ok = name.length >= 2 && emailOk && !!svc;
+    if(!ok){ toast('Please fix the highlighted fields.', 'fa-triangle-exclamation'); return; }
+    this.hidden = true;
+    $('#startSuccess').hidden = false;
+    toast('Thanks ' + name.split(' ')[0] + '! Your ' + svc + ' request is in.', 'fa-circle-check');
+  });
+  ['#inName','#inEmail','#inService'].forEach(id=> $(id).addEventListener('input', function(){ this.closest('.field').classList.remove('err'); }));
+
+  /* ---------- Invoice tracking ---------- */
+  $('#invForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const id = $('#inInv').value.trim().toUpperCase();
+    if(!id){ $('#f-inv').classList.add('err'); return; }
+    $('#f-inv').classList.remove('err');
+    let hash = 0; for(let i=0;i<id.length;i++){ hash = (hash*31 + id.charCodeAt(i)) % 997; }
+    const stage = hash % 4;
+    const stages = ['Order Received','Production In Progress','Quality Review','Delivered'];
+    const details = ['Payment confirmed & project queued.','Our team is actively building your campaign assets.','Final QA and performance review underway.','All deliverables handed over. Thank you!'];
+    $('#invIdLabel').textContent = 'Invoice #' + id;
+    $('#invStatusPill').textContent = stages[stage];
+    const ol = $('#invSteps'); ol.innerHTML = '';
+    stages.forEach((s,i)=>{
+      const li = document.createElement('li');
+      li.className = i < stage ? 'done' : (i === stage ? 'current' : '');
+      li.innerHTML = '<b>' + s + '</b><small>' + (i <= stage ? details[i] : 'Pending') + '</small>';
+      ol.appendChild(li);
+    });
+    const eta = new Date(Date.now() + (14 - stage*4)*86400000);
+    $('#invEta').innerHTML = stage === 3
+      ? '<i class="fa-solid fa-circle-check" style="color:#3ddc84"></i> Completed on ' + eta.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'}) + '.'
+      : 'Estimated completion: <strong style="color:#e8edf2">' + eta.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'}) + '</strong>';
+    $('#invResult').classList.add('show');
+  });
+  $('#inInv').addEventListener('input', function(){ this.closest('.field').classList.remove('err'); });
+
+  /* ---------- Hero bars ---------- */
+  setTimeout(()=> $('#home').classList.add('loaded'), 350);
+
+  /* init */
+  onScroll();
+})();
+</script>
+</body>
+</html>
